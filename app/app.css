@@ -3302,11 +3302,14 @@ article.markdown-section {
   border: 0;
   border-radius: 10px;
   padding: 4px 10px;
+  min-width: 72px;
   background: transparent;
   color: #666;
   font-size: 12px;
+  font-weight: 600;
   line-height: 1.4;
   cursor: pointer;
+  text-align: center;
 }
 
 .dpr-admin-tab:hover {
