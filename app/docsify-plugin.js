@@ -2630,12 +2630,12 @@ window.$docsify = {
             badgeCount++;
             if (!badge._dprDragBound) {
               badge._dprDragBound = true;
-              badge.addEventListener('pointerdown', (e) => {
+              badge.addEventListener('mousedown', (e) => {
+                if (e.button !== 0) return; // 只处理左键
                 e.preventDefault();
                 e.stopPropagation();
 
                 // 标记 badge 拖拽进行中 —— wrapper 的 click handler 检查此标志
-                // 以防止拖拽/点击 badge 时触发日期组折叠
                 const parentToggle = badge.closest('.sidebar-day-toggle,.sidebar-conference-toggle');
                 if (parentToggle) parentToggle._dprBadgeDragging = true;
 
@@ -2651,30 +2651,23 @@ window.$docsify = {
                 ghost.style.top = (e.clientY - rect.height / 2) + 'px';
                 document.body.appendChild(ghost);
 
-                // 用 opacity:0 隐藏原始 badge（视觉消失，但保留 hit-test）
-                // 注意：不能设 pointer-events:none，否则 setPointerCapture 失效，
-                // pointermove/pointerup 永远不会触发，拖拽就完全断掉了。
                 badge.style.opacity = '0';
-                badge.setPointerCapture(e.pointerId);
 
-                // 延迟清除拖拽标志：pointerup → click 之间有微小延迟，
-                // 必须等 click 事件被 wrapper handler 吞掉后才清除
                 const clearDragFlag = () => {
                   setTimeout(() => {
                     if (parentToggle) parentToggle._dprBadgeDragging = false;
                   }, 80);
                 };
 
-                const onMove = (ev) => {
+                // --- 用 document 级别的 mousemove/mouseup，最可靠的拖拽模式 ---
+                const onMouseMove = (ev) => {
                   ghost.style.left = (ev.clientX - rect.width / 2) + 'px';
                   ghost.style.top = (ev.clientY - rect.height / 2) + 'px';
                 };
 
-                const onUp = (ev) => {
-                  badge.removeEventListener('pointermove', onMove);
-                  badge.removeEventListener('pointerup', onUp);
-                  badge.removeEventListener('pointercancel', onUp);
-                  try { badge.releasePointerCapture(ev.pointerId); } catch (_) {}
+                const onMouseUp = (ev) => {
+                  document.removeEventListener('mousemove', onMouseMove, true);
+                  document.removeEventListener('mouseup', onMouseUp, true);
 
                   const dx = ev.clientX - startX, dy = ev.clientY - startY;
                   const dist = Math.sqrt(dx * dx + dy * dy);
@@ -2700,8 +2693,7 @@ window.$docsify = {
                     };
                     ghost.classList.add('popping');
                     ghost.addEventListener('animationend', cleanupPop, { once: true });
-                    // 兜底：动画可能因 DOM 变动等原因不触发 animationend
-                    setTimeout(cleanupPop, 500);
+                    setTimeout(cleanupPop, 500); // 兜底
                   } else {
                     // ── 拖近：弹回原位 ──
                     let returnDone = false;
@@ -2713,20 +2705,17 @@ window.$docsify = {
                       clearDragFlag();
                     };
                     ghost.classList.add('returning');
-                    // 强制 reflow，确保 .returning 的 transition 规则生效后再设目标值
-                    void ghost.offsetWidth;
+                    void ghost.offsetWidth; // 强制 reflow
                     ghost.style.left = (origLeft - rect.width / 2) + 'px';
                     ghost.style.top = (origTop - rect.height / 2) + 'px';
                     ghost.style.transform = 'scale(1)';
                     ghost.addEventListener('transitionend', cleanupReturn, { once: true });
-                    // 兜底：如果 transition 未真正触发（距离极小 / 同帧值相同）
-                    setTimeout(cleanupReturn, 350);
+                    setTimeout(cleanupReturn, 350); // 兜底
                   }
                 };
 
-                badge.addEventListener('pointermove', onMove);
-                badge.addEventListener('pointerup', onUp);
-                badge.addEventListener('pointercancel', onUp);
+                document.addEventListener('mousemove', onMouseMove, true);
+                document.addEventListener('mouseup', onMouseUp, true);
               });
             }
           }
