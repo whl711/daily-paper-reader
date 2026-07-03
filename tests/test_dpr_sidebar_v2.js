@@ -418,6 +418,48 @@ function testDailyCalendarInPlaceRefreshUsesActiveDailyTag() {
   assert.ok(!block.includes('buildDailyDateView'));
 }
 
+function testDailyAxisSectionKeyFollowsActiveDateAndTag() {
+  const sidebar = loadSidebarForTest('#/202606/24/paper-a');
+  const tools = sidebar.__test;
+  const model = tools.parseSidebar(sampleSidebar);
+  assert.equal(typeof tools.resolveDailyAxisSectionStateKey, 'function');
+
+  assert.equal(
+    tools.resolveDailyAxisSectionStateKey(model, {
+      activeDailyDate: '20260624',
+      activeDailyTag: '__all__',
+      activeDailyMonth: '202606',
+    }, {}),
+    'daily:tag:20260624:__all__',
+  );
+  assert.equal(
+    tools.resolveDailyAxisSectionStateKey(model, {
+      activeDailyDate: '20260624',
+      activeDailyTag: 'rl',
+      activeDailyMonth: '202606',
+    }, {}),
+    'daily:tag:20260624:rl',
+  );
+}
+
+function testDailyDateAndTagClicksExpandCurrentSectionOnlyForDaily() {
+  const js = fs.readFileSync('app/dpr-sidebar.js', 'utf8');
+  const calendarStart = js.indexOf("var calendarDay = e.target.closest('.dpr-sidebar-calendar-day[data-calendar-date]');");
+  const calendarEnd = js.indexOf("var axisTab = e.target.closest('.dpr-sidebar-axis-tab');", calendarStart);
+  assert.ok(calendarStart > 0 && calendarEnd > calendarStart, 'calendar day handler should be present');
+  const calendarBlock = js.slice(calendarStart, calendarEnd);
+  assert.ok(calendarBlock.includes('expandCurrentDailyAxisSection('));
+
+  const tabStart = js.indexOf("if (tabGroup === 'daily') {");
+  const tabEnd = js.indexOf('rerenderSidebarBody(rerenderOptionsForAxisControlClick());', tabStart);
+  assert.ok(tabStart > 0 && tabEnd > tabStart, 'axis tab handler should be present');
+  const dailyTabBlock = js.slice(tabStart, tabEnd);
+  assert.ok(dailyTabBlock.includes('expandCurrentDailyAxisSection('));
+
+  const conferenceBlock = js.slice(js.indexOf("} else if (tabGroup === 'conference')", tabStart), tabEnd);
+  assert.ok(!conferenceBlock.includes('expandCurrentDailyAxisSection('));
+}
+
 function testPaperEvidenceAndActionButtonsRender() {
   const sidebar = loadSidebarForTest('#/202606/24/paper-a');
   const tools = sidebar.__test;
@@ -1355,6 +1397,8 @@ testDailyCalendarViewUsesMonthGridAndActiveDateOnly();
 testDailyCalendarTagViewFiltersActiveDateByKeyword();
 testDailyCalendarPlacementToggleKeepsControlRowFixedAboveLayers();
 testDailyCalendarInPlaceRefreshUsesActiveDailyTag();
+testDailyAxisSectionKeyFollowsActiveDateAndTag();
+testDailyDateAndTagClicksExpandCurrentSectionOnlyForDaily();
 testPaperEvidenceAndActionButtonsRender();
 testPaperMetaOrderKeepsEvidenceBetweenTitleAndStars();
 testQuickLinksCenterTextAndDetachIcon();

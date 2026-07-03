@@ -1701,6 +1701,22 @@
     });
   }
 
+  function resolveDailyAxisSectionStateKey(model, viewState, readMap) {
+    var vs = resolveViewState(viewState || state);
+    var map = readMap || vs.readMap || {};
+    var axisModel = modelForUnreadNormalFilter(model, map);
+    var dailyView = buildDailyCalendarTagView(axisModel, vs.activeDailyDate, vs.activeDailyTag, map, vs.activeDailyMonth);
+    var group = dailyView.groups && dailyView.groups[0];
+    return group ? axisSectionStateKey('daily', 'tag', group.key) : '';
+  }
+
+  function expandCurrentDailyAxisSection(readMap) {
+    if (!state.expandedAxisSections) state.expandedAxisSections = new Set();
+    collapseAxisSectionsForGroup('daily');
+    var sectionKey = resolveDailyAxisSectionStateKey(state.model, state, readMap || ReadState.getAll());
+    if (sectionKey) state.expandedAxisSections.add(sectionKey);
+  }
+
   function syncResolvedAxisState() {
     var readMap = ReadState.getAll();
     var axisModel = modelForUnreadNormalFilter(state.model, readMap);
@@ -2214,6 +2230,8 @@
           state.dailyViewMode = 'date';
           state.activeDailyDate = calendarDate;
           state.activeDailyMonth = monthKeyFromDateKey(calendarDate) || state.activeDailyMonth;
+          expandCurrentDailyAxisSection(ReadState.getAll());
+          persistCollapse();
           rerenderSidebarBody(rerenderOptionsForAxisControlClick());
         }
         return;
@@ -2230,6 +2248,8 @@
             state.activeDailyDate = tabKey;
             state.activeDailyMonth = monthKeyFromDateKey(tabKey) || state.activeDailyMonth;
           }
+          expandCurrentDailyAxisSection(ReadState.getAll());
+          persistCollapse();
         } else if (tabGroup === 'conference') {
           if (state.conferenceViewMode === 'tag') state.activeConferenceTag = tabKey;
           else state.activeConference = tabKey;
@@ -2457,6 +2477,7 @@
         buildDailyTagView: buildDailyTagView,
         buildDailyCalendarTagView: buildDailyCalendarTagView,
         buildDailyResultView: buildDailyResultView,
+        resolveDailyAxisSectionStateKey: resolveDailyAxisSectionStateKey,
         buildConferenceConfView: buildConferenceConfView,
         buildConferenceTagView: buildConferenceTagView,
         buildConferenceResultView: buildConferenceResultView,
