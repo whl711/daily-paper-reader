@@ -1,0 +1,2684 @@
+{
+  "top_k": 200,
+  "generated_at": "2026-07-11T06:36:13.369671+00:00",
+  "papers": [
+    {
+      "id": "openreview-icml-2026-yitfnjursw",
+      "source": "ICML-2026-Accepted",
+      "title": "Replay Failures as Successes: Sample-Efficient Reinforcement Learning for Instruction Following",
+      "abstract": "Reinforcement Learning (RL) has shown promise for aligning Large Language Models (LLMs) to follow instructions with various constraints. Despite the encouraging results, RL improvement inevitably relies on sampling successful, high-quality responses; however, the initial model often struggles to generate responses that satisfy all constraints due to its limited capabilities, yielding sparse or indistinguishable rewards that impede learning. In this work, we propose ***H**indsight **i**nstruction **R**eplay* (HiR), a novel sample-efficient RL framework for complex instruction following tasks, which employs a *select*-then-*rewrite* strategy to *replay failed attempts as successes* based on the constraints that have been satisfied in hindsight. We perform RL on these replayed samples as well as the original ones, theoretically framing the objective as dual-preference learning at both the instruction- and response-level to enable efficient optimization using only a binary reward signal. Extensive experiments demonstrate that the proposed HiR yields promising results across different instruction following tasks, while requiring less computational budget. Our code and dataset are available at https://github.com/sastpg/HIR.",
+      "authors": [
+        "Kongcheng Zhang",
+        "QI YAO",
+        "Shunyu Liu",
+        "Wenjian Zhang",
+        "Min Cen",
+        "Yang Zhou",
+        "Wenkai Fang",
+        "Yiru Zhao",
+        "Baisheng Lai",
+        "Mingli Song"
+      ],
+      "primary_category": "Instruction Following",
+      "categories": [
+        "Instruction Following",
+        "Reinforcement Learning",
+        "Large Language Models"
+      ],
+      "published": "2026-04-30T19:09:29.084+00:00",
+      "link": "https://openreview.net/forum?id=YiTfnJursw",
+      "pdf_url": "https://openreview.net/pdf/263e9525a33eb305dd1b1101b68ba691afee4510.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-ruheyl9bb9",
+      "source": "ICML-2026-Accepted",
+      "title": "Discounted Beta–Bernoulli Reward Estimation for Sample-Efficient Reinforcement Learning with Verifiable Rewards",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) has emerged as an effective post-training paradigm for improving the reasoning capabilities of large language models.\nHowever, existing group-based RLVR methods often suffer from severe sample inefficiency.\nThis inefficiency stems from reliance on point estimation of rewards from a small number of rollouts, leading to high estimation variance, variance collapse, and ineffective utilization of generated responses.\nIn this work, we reformulate RLVR from a statistical estimation perspective by modeling rewards as samples drawn from a policy-induced distribution and casting advantage computation as the problem of estimating the reward distribution from finite data.\nBuilding on this view, we propose **D**iscounted **B**eta–**B**ernoulli (**DBB**) reward estimation, which leverages historical reward statistics for the non-stationary distribution.\nAlthough biased, the resulting estimator exhibits reduced and stable variance and theoretically avoids variance collapse.\nUnder mild non-stationarity, it also achieves a lower mean squared error than standard point estimation, as we characterize analytically and verify empirically.\nAcross six in-distribution and three out-of-distribution reasoning benchmarks, GRPO with DBB consistently outperforms naive GRPO and strong recent baselines, including the replay-based RePO and the variance-collapse-aware GRESO and DAPO.\nRelative to GRPO, it achieves average Acc@8 improvements of 3.43/2.32 points in-distribution and 10.05/8.34 points out-of-distribution on the 1.7B and 8B models, respectively, without additional computational cost or memory usage.",
+      "authors": [
+        "Haechan Kim",
+        "Soohyun Ryu",
+        "Gyouk Chu",
+        "Doohyuk Jang",
+        "Eunho Yang"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Reinforcement Learning with Verifiable Reward",
+        "Beta-Bernoulli Model"
+      ],
+      "published": "2026-04-30T19:18:27.334+00:00",
+      "link": "https://openreview.net/forum?id=RUheyL9bb9",
+      "pdf_url": "https://openreview.net/pdf/6d47f4892a93e94bd8554fee8ab2361f570d655d.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-5pqiaadn7e",
+      "source": "ICML-2026-Accepted",
+      "title": "Return-Critic: Bridging Goal Discrepancy for Efficient Visual Reinforcement Learning",
+      "abstract": "Sample inefficiency remains a challenge in pixel-based visual reinforcement learning (RL), primarily due to ineffective state representation learning. While recent advances employ auxiliary tasks to improve representation learning, their representation goals (e.g., mask reconstruction, state prediction) are misaligned with the ultimate RL goal of maximizing return, constraining further improvements in representation quality. To achieve efficient visual reinforcement learning, we propose Return-Critic (RC), an auxiliary framework that bridges goal discrepancy by return prediction. RC samples partial frames from an episode, processes them through a shared visual encoder, and employs a lightweight Transformer to predict the episode's return, forcing the encoder to learn return-relevant representation. The attention weights naturally highlight important frames, enabling a key function for prioritized learning. Extensive experiments on both online (DMControl) and offline (V-D4RL) benchmarks demonstrate that RC significantly enhances the sample efficiency, particularly achieving 68% performance boost on average across nine challenging tasks from DMControl.",
+      "authors": [
+        "Ruyi Lu",
+        "Xuesong Wang",
+        "Hengrui Zhang",
+        "Yuhu Cheng"
+      ],
+      "primary_category": "visual reinforcement learning; representation learning; sample efficiency",
+      "categories": [
+        "visual reinforcement learning; representation learning; sample efficiency"
+      ],
+      "published": "2026-04-30T19:08:42.83+00:00",
+      "link": "https://openreview.net/forum?id=5pQiAaDN7E",
+      "pdf_url": "https://openreview.net/pdf/0c6c3bde5001145f23345f8eae3d745711acacfa.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-agn2cgtciw",
+      "source": "ICML-2026-Accepted",
+      "title": "From Generative to Episodic: Sample-Efficient Replicable Reinforcement Learning",
+      "abstract": "The epidemic failure of replicability across empirical science and machine learning has recently motivated the formal study of replicable learning algorithms [Impagliazzo et al. (2022)]. In contrast to batch settings (i.e. data comes from a fixed i.i.d. source) where the cost of replicability is relatively well understood, there remain significant gaps in our knowledge for control settings like reinforcement learning where an agent must interact directly with a shifting environment. Indeed, there is a large gap between the best upper bound of $\\tilde{O}(S^7 A^7)$ [Eaton et al. (2023)] for RL with exploration, and $\\tilde{O}(S^2 A^2)$ [Karbasi et al. (2023)] for the RL `batch' setting. This gap raises a key question in the broader theory of replicability: Is replicable exploration inherently more expensive than batch learning? Is sample-efficient replicable RL even possible?\n\nIn this work, we (nearly) resolve this problem (for low-horizon tabular MDPs): exploration is not a significant barrier to replicable learning! Our main result is a replicable RL algorithm on $\\tilde{O}(S^2A)$ samples, bridging the gap between the generative and episodic settings. We complement this with a lower bound in the episodic setting of $\\tilde{\\Omega}(S^2)$ showcasing the near-optimality of our algorithm with respect to the state space $S$.",
+      "authors": [
+        "Max Hopkins",
+        "Sihan Liu",
+        "Christopher Ye",
+        "Yuichi Yoshida"
+      ],
+      "primary_category": "Replicability",
+      "categories": [
+        "Replicability",
+        "Stability",
+        "Reinforcement Learning"
+      ],
+      "published": "2026-04-30T19:19:56.027+00:00",
+      "link": "https://openreview.net/forum?id=agN2CgTCIW",
+      "pdf_url": "https://openreview.net/pdf/e692640cf859e714bdbcbbd7a4ca5fe02364c979.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-edpv55htq6",
+      "source": "ICML-2026-Accepted",
+      "title": "Prioritized Model Experience Replay",
+      "abstract": "Model-based reinforcement learning (MBRL) improves sample efficiency by leveraging learned dynamics models, but often suffers from unstable training due to dynamics model learning mismatch: models are trained on data from historical policies while being queried under the continually updated current policy. This mismatch can cause policy-relevant local model error to remain large even as global prediction error decreases, leading to oscillatory updates. We present a finite-horizon performance analysis that decomposes the policy performance gap into global model error, policy-induced distribution shift, and historical policy mixture effects, showing that minimizing global error alone is insufficient for stable optimization. Motivated by this analysis, we propose Prioritized Model Experience Replay (PMER), a lightweight replay mechanism that prioritizes high-error transitions during dynamics model training. PMER implicitly emphasizes policy-relevant regions without explicit policy distance estimation and integrates seamlessly into Dyna-style MBRL frameworks. Experiments on MuJoCo benchmarks demonstrate improved stability, faster convergence, and higher sample efficiency.",
+      "authors": [
+        "Muxi Tao",
+        "Jiangtao Wen",
+        "Yuxing Han"
+      ],
+      "primary_category": "Model-based Reinforcement Learning",
+      "categories": [
+        "Model-based Reinforcement Learning",
+        "RL",
+        "Experience Replay"
+      ],
+      "published": "2026-04-30T19:18:12.926+00:00",
+      "link": "https://openreview.net/forum?id=eDPv55hTQ6",
+      "pdf_url": "https://openreview.net/pdf/19c698040e5e933546a8b6e79081a3efe2217f3c.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-4qlptaboir",
+      "source": "ICML-2026-Accepted",
+      "title": "Sample-Efficient Diffusion-based Reinforcement Learning with Critic Guidance",
+      "abstract": "Recent advances in reinforcement learning (RL) have achieved great successes by leveraging the multimodality and exploration capability of diffusion policies. Among these approaches, one representative branch focuses on the sampling-based policy optimization. This design enables better exploration capability of the diffusion model, particularly at the beginning of training, but suffer from low exploitation in Q-value information, resulting in a slow policy convergence. Another branch pays attention to gradient-based policy optimization, which sufficiently exploits the gradient of the Q function yet tends to collapse into a unimodal policy with low diversity. To address this issue, we propose CGPO, \\textbf{C}ritic-\\textbf{G}uided diffusion \\textbf{P}olicy \\textbf{O}ptimization, which effectively balances exploration and exploitation with the training-free guidance technique integrated into the denoising process of diffusion policy. Concretely, CGPO steers action generation toward high-value regions defined by the critic network and uses the guided actions as regression objectives. In this manner, CGPO reduces the time required to obtain high-quality actions and improves final performance with better balance between the exploration-exploitation tradeoff. We validate the effectiveness of CGPO on 5 MuJoCo locomotion tasks, and CGPO achieves state-of-the-art performance compared with existing diffusion-based RL methods. Notably, CGPO is the first success to incorporate diffusion policy into real-world RL, with its superior performance on Franka robot arm grasping tasks. Our official page is released at \\url{https://dingsht.tech/cgpo-webpage}.",
+      "authors": [
+        "Shutong Ding",
+        "Zejia Zhong",
+        "Zhongyi Wang",
+        "Ke Hu",
+        "Bikang Pan",
+        "Jingya Wang",
+        "Ye Shi"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Diffusion Policy",
+        "Training-free Guidance"
+      ],
+      "published": "2026-04-30T19:15:20.593+00:00",
+      "link": "https://openreview.net/forum?id=4qLPtABOIR",
+      "pdf_url": "https://openreview.net/pdf/36538634fe5cce2d06bdee3399aff8f7e173d04e.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-jo7mt1xbuq",
+      "source": "ICML-2026-Accepted",
+      "title": "HyMTRL: A Hybrid Multi-Task Reinforcement Learning Framework via Phased Policy Evolution",
+      "abstract": "Multi-task reinforcement learning (MTRL) aims to improve sample efficiency by sharing knowledge across related tasks, but it often suffers from asynchronous convergence speed caused by inherent differences in task difficulty. This imbalance places substantial representational strain on the shared critic network, which emerges as a major performance bottleneck. To address this issue, we propose Hybrid Multi-Task Reinforcement Learning (HyMTRL), a framework that alleviates critic overload through a phased policy evolution strategy. HyMTRL divides task learning into a reinforcement exploration phase and an imitation refinement phase. By transitioning mastered tasks from reinforcement learning–based policy optimization to imitation learning–based behavior consolidation, these tasks are removed from the critic’s optimization objective, effectively reducing representational strain. In addition, a critic reset mechanism restores network capacity while preserving learned policy and historical experience. HyMTRL is a general framework that can be easily integrated with a wide range of existing MTRL methods. Empirical evaluations on the MetaWorld benchmark demonstrate that HyMTRL leads to significant improvements in both learning efficiency and final performance.",
+      "authors": [
+        "Jinmin He",
+        "Kai Li",
+        "Xiaoyi Dong",
+        "Yifan Zang",
+        "Yuheng Jing",
+        "Yifan Zhang",
+        "Junliang Xing",
+        "Jian Cheng"
+      ],
+      "primary_category": "Multi-Task Reinforcement Learning",
+      "categories": [
+        "Multi-Task Reinforcement Learning"
+      ],
+      "published": "2026-04-30T19:12:02.244+00:00",
+      "link": "https://openreview.net/forum?id=Jo7Mt1XbuQ",
+      "pdf_url": "https://openreview.net/pdf/be055576acdc2e71ee6f2f437a12f49557eb0b80.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-l6vw6cvkhi",
+      "source": "ICML-2026-Accepted",
+      "title": "TaskLoom: Weaving Knowledge Across Tasks in World Models",
+      "abstract": "World models have significantly improved the sample efficiency of model-based reinforcement learning (MBRL) by enabling policy learning in imagination, thereby reducing the need for direct interaction with the real environment. However, most existing world model methods are trained independently for each task or perform multi-task learning using offline datasets, failing to fully exploit the latent relationships among tasks in online interactive scenarios. To address this limitation, we propose TaskLoom, a knowledge-sharing world model architecture for online RL. TaskLoom adopts a grouped two-stage training paradigm: first, the tasks are divided into several groups based on the similarity of world model gradients,\n  and fine-grained knowledge is shared among tasks within each group; second, coarse-grained knowledge is exchanged across groups, enabling hierarchical knowledge transfer and reuse. \n  Experimental results show that TaskLoom outperforms baseline methods on widely used benchmarks such as Proprio Control, Visual Control and Meta-World, validating the effectiveness of the proposed knowledge-sharing mechanism for both low-dimensional state and high-dimensional visual inputs.",
+      "authors": [
+        "Qingzhang Zeng",
+        "Peixi Peng",
+        "Hang Li",
+        "Luntong Li",
+        "Yonghong Tian"
+      ],
+      "primary_category": "world model",
+      "categories": [
+        "world model",
+        "reinforcement learning"
+      ],
+      "published": "2026-04-30T19:13:04.653+00:00",
+      "link": "https://openreview.net/forum?id=L6Vw6CvKHi",
+      "pdf_url": "https://openreview.net/pdf/a655f70247ade0d46d0559617bb8e7b42344d720.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-uzf4ssk12k",
+      "source": "ICML-2026-Accepted",
+      "title": "DF-ExpEnse: Diffusion Filtered Exploration for Sample Efficient Finetuning",
+      "abstract": "A natural recipe for intelligent robotic decision-making is initializing from pretrained generative control policies, which have summarized offline experience, and adapting them to self-collected online experience.  We present DF-ExpEnse, an exploration technique that improves the quality of online experience collection, thus increasing finetuning sample-efficiency.  DF-ExpEnse leverages the multimodal modeling capabilities of the generative control policy to create an expressive and tractably evaluatable candidate set.  It then utilizes an ensemble of critics to identify the action that best balances quality with high exploration interest.   In fleet settings, DF-ExpEnse further enables cross-agent communication to facilitate collaborative exploration as a group.  DF-ExpEnse can be seamlessly integrated with existing strategies that finetune pretrained generative control policies via reinforcement learning.  We experimentally validate consistent sample-efficiency benefits through DF-ExpEnse across a variety of manipulation and locomotion tasks, compared to default finetuning and alternative action selection schemes.  Project can be found at [df-expense.github.io](https://df-expense.github.io).",
+      "authors": [
+        "Calvin Luo",
+        "Chen Sun",
+        "Shuran Song"
+      ],
+      "primary_category": "Exploration",
+      "categories": [
+        "Exploration",
+        "Reinforcement Learning",
+        "Robotic Fleets",
+        "Fleet Learning"
+      ],
+      "published": "2026-04-30T19:18:06.997+00:00",
+      "link": "https://openreview.net/forum?id=UZF4ssK12K",
+      "pdf_url": "https://openreview.net/pdf/68598525b0db388244d6d1b285fdcdb65973f1d1.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-qgakuqzybc",
+      "source": "ICML-2026-Accepted",
+      "title": "Learning Generalizable Skill Policy with Data-Efficient Unsupervised RL",
+      "abstract": "Unsupervised Reinforcement Learning (URL) aims to pre-train scalable, skill-conditioned policies without extrinsic rewards, serving as a foundation for downstream control tasks. Despite recent progress, we argue that current off-policy URL methods are limited by two critical, overlooked bottlenecks: (1) non-stationarity skill semantic and (2) brittle generalization. To address these challenges, we propose GenDa (Generalizable Data-efficient Agent), a unified framework for robust unsupervised reinforcement learning. First, we introduce a skill relabeling mechanism to mitigate non-stationarity and significantly improve sample efficiency for pretraining. Second, we propose a Complementary Information Bottleneck(CIB), encouraging the learned skill policy to focus on ego-centric features and become robust to distribution shifts for downstream tasks. Through various experiments, we demonstrate that GenDa significantly enhances the scalability of URL with superior generality and sample efficiency. Our source codes are available in the supplementary materials.",
+      "authors": [
+        "Jongchan Park",
+        "Seungjun Oh",
+        "Seungho Baek",
+        "Yusung Kim"
+      ],
+      "primary_category": "Unsupervised Reinforcement Learning",
+      "categories": [
+        "Unsupervised Reinforcement Learning"
+      ],
+      "published": "2026-04-30T19:10:52.802+00:00",
+      "link": "https://openreview.net/forum?id=qgAKuqzYBC",
+      "pdf_url": "https://openreview.net/pdf/336fa9c2dc8ff5721807a88c429239ab8f3f6ceb.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-g9uw8lfwep",
+      "source": "ICML-2026-Accepted",
+      "title": "Efficient and Uncertainty-Aware Diffusion Framework for Offline-to-Online Reinforcement Learning",
+      "abstract": "Offline-to-Online Reinforcement Learning (O2O-RL) leverages an offline, pre-trained policy to minimize costly online interactions. Although data-efficient, O2O-RL is susceptible to shifts between offline and online distributions. Existing work aims to mitigate the harm of this shift by finetuning the policy on trajectory data sampled from a diffusion model. Inspired by this line of work, we propose DUAL: an efficient **D**iffusion **U**ncertainty-**A**ware framework for offline-to-online reinforcement **L**earning. DUAL utilizes the prior knowledge of the diffusion model to distill a fast-sampling diffusion actor policy and transition model in the offline phase. DUAL also employs a Laplace approximation and distance transition-state-shift detection, thereby using uncertainty quantification to improve exploration versus exploitation in the online phase. We formally show that our actor loss with the Laplace approximation provides a proxy for a principled estimate of epistemic uncertainty. Empirically, DUAL improves the online expected return over O2O-RL baselines across multiple settings and environments.",
+      "authors": [
+        "Ha Manh Bui",
+        "Metod Jazbec",
+        "Eric Nalisnick",
+        "Anqi Liu"
+      ],
+      "primary_category": "Diffusion Reinforcement Learning",
+      "categories": [
+        "Diffusion Reinforcement Learning",
+        "Uncertainty Estimation",
+        "Offline-to-Online Reinforcement Learning."
+      ],
+      "published": "2026-04-30T19:15:26.95+00:00",
+      "link": "https://openreview.net/forum?id=G9UW8lFWeP",
+      "pdf_url": "https://openreview.net/pdf/9444f655ab61b6c4811aaf170f0a924485b5ce35.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-vupee4yd1t",
+      "source": "ICML-2026-Accepted",
+      "title": "Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies",
+      "abstract": "Diffusion and flow policies are gaining prominence in online reinforcement learning (RL) due to their expressive power, yet training them efficiently remains a critical challenge. A fundamental difficulty that distinguishes online RL from standard generative modeling is the lack of direct samples from the target Boltzmann distribution defined by the Q-function. To address this, two seemingly distinct families of methods have been proposed for diffusion policies: a noise-expectation family, which uses a weighted average of noise as the training target, and a gradient-expectation family, which employs a weighted average of Q-function gradients. However, it remains unclear how these objectives are formally related, or whether they can be synthesized into a more general formulation. In this paper, we propose a unified framework, reverse flow matching (RFM), which rigorously addresses the problem of training diffusion and flow models without direct target samples. By adopting a reverse inferential perspective, we formulate the training target as a posterior mean estimation problem given an intermediate noisy sample. Crucially, we introduce Langevin Stein operators to construct zero-mean control variates, deriving a general class of estimators that share the same expectation. We show that existing noise-expectation and gradient-expectation methods are simply two specific instances within this broader class. This unified view yields two key advancements: it extends the capability of targeting Boltzmann distributions from diffusion to flow policies, and it enables the principled combination of Q-value and Q-gradient information to form an effective estimator, thereby improving training efficiency and stability. We instantiate RFM to train a flow policy in online RL and demonstrate improved performance on continuous-control benchmarks compared to diffusion policy baselines.",
+      "authors": [
+        "Zeyang Li",
+        "Sunbochen Tang",
+        "Navid Azizan"
+      ],
+      "primary_category": "Reinforcement learning",
+      "categories": [
+        "Reinforcement learning",
+        "flow matching",
+        "diffusion",
+        "sampling"
+      ],
+      "published": "2026-04-30T19:13:48.346+00:00",
+      "link": "https://openreview.net/forum?id=vUpEe4yd1T",
+      "pdf_url": "https://openreview.net/pdf/74b510cb0fa1b7fd689479c5222e15002c2fcbb7.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-dsxn7vuwa3",
+      "source": "ICML-2026-Accepted",
+      "title": "From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning",
+      "abstract": "We introduce Distribution Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement learning (RL) as a \"distribution contraction\" operator to refine pretrained generative robot policies. DICE-RL turns a pretrained behavior prior into a high-performing \"pro\" policy by amplifying high-success behaviors from online feedback. We pretrain a diffusion- or flow-based policy for broad behavioral coverage, then finetune it with a stable, sample-efficient residual off-policy RL framework that combines selective behavior regularization with value-guided action selection. Extensive experiments and analyses show that DICE-RL reliably improves performance with strong stability and sample efficiency. It enables mastery of complex long-horizon manipulation skills directly from high-dimensional pixel inputs, both in simulation and on a real robot. Project website: [dice.rl.2026](https://zhanyisun.github.io/dice.rl.2026/).",
+      "authors": [
+        "Zhanyi Sun",
+        "Shuran Song"
+      ],
+      "primary_category": "Robotic Manipulation",
+      "categories": [
+        "Robotic Manipulation",
+        "Reinforcement Learning Finetuning",
+        "Behavior Cloning"
+      ],
+      "published": "2026-04-30T19:14:14.435+00:00",
+      "link": "https://openreview.net/forum?id=DsXN7VUwA3",
+      "pdf_url": "https://openreview.net/pdf/3963fdc5f2684b3428764a514596c3ffdd2de106.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-8atkbixm7u",
+      "source": "ICML-2026-Accepted",
+      "title": "Scaling Multi-Agent Environment Co-Design with Diffusion Models",
+      "abstract": "The agent-environment co-design paradigm jointly optimises agent policies and environment configurations in search of improved system performance, promising to fundamentally reshape how we deploy multi-agent systems in domains such as warehouse logistics and windfarm management. However, current co-design methods collapse under high dimensional environment design spaces and suffer from sample inefficiency when addressing moving targets inherent to joint optimisation. We address this by developing **Diffusion Co-Design** (DiCoDe), a scalable and sample-efficient co-design framework incorporating two core innovations. We introduce Projected Universal Guidance (PUG), enabling exploration of constraint-satisfying reward-maximising environments, and devise a critic distillation mechanism to transfer knowledge from the reinforcement learning loop to a guided diffuision model. Together, these improvements lead to superior environment-policy pairs when validated on challenging multi-agent co-design benchmarks, for example, exceeding state-of-the art in a warehouse setting with 39% higher rewards and 66% fewer simulation steps.",
+      "authors": [
+        "Hao Xiang Li",
+        "Michael Amir",
+        "Amanda Prorok"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Environment Co-Design",
+        "Diffusion"
+      ],
+      "published": "2026-04-30T19:11:15.513+00:00",
+      "link": "https://openreview.net/forum?id=8atKBiXm7u",
+      "pdf_url": "https://openreview.net/pdf/9a76b85a6035792202ffac1f7b969889bdda30e5.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-mcvjybwmpt",
+      "source": "ICML-2026-Rejected-Public",
+      "title": "Gradient-Space Evolution Strategies for Efficient Diffusion Alignment",
+      "abstract": "Reinforcement Learning (RL) has become essential for aligning diffusion models, yet existing methods often struggle with inefficiency and training instability.\nIn this paper, we introduce **Gradient-Space Evolution Strategies (GS-ES)**, a novel framework that bridges Evolution Strategies and RL by reimagining alignment as a step-wise evolutionary process.\nTheoretically, we establish a duality between structured action-space sampling and gradient-space evolution, allowing us to estimate stable update directions directly from diffusion noise.\nThis formulation effectively reduces the high variance inherent in standard policy gradients while eliminating the computational burden of maintaining reference models.\nEmpirically, GS-ES demonstrates superior training efficiency and alignment quality across Text-to-Image (Flux) and Text-to-Video (Wan2.1) tasks, significantly outperforming standard GRPO-based baselines.",
+      "authors": [
+        "Jiuzhou Lin",
+        "junlong wu",
+        "Dewen Fan",
+        "Boheng Zhang",
+        "Fei Zuo",
+        "Huan Ouyang",
+        "Huaiqing Wang",
+        "Jia Sun",
+        "Jinge Li",
+        "Yuqing DING",
+        "Fan Yang",
+        "Houde Liu",
+        "Tingting Gao",
+        "Han Li"
+      ],
+      "primary_category": "Diffusion Models",
+      "categories": [
+        "Diffusion Models",
+        "Reinforcement Learning",
+        "Evolution Strategies",
+        "RLHF"
+      ],
+      "published": "2026-01-23T07:57:16.709+00:00",
+      "link": "https://openreview.net/forum?id=McVjYBWMpT",
+      "pdf_url": "https://openreview.net/pdf/2b4726725a4ff3be1ea3cc81980af73bf6e37ea1.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-vkmwujvv2c",
+      "source": "ICML-2026-Accepted",
+      "title": "Distillation Models are Good Samplers for Diffusion Reinforcement Learning",
+      "abstract": "We present DMSampler, a framework that accelerates online diffusion reinforcement learning by replacing expensive training-time policy rollouts with a co-evolving few-step distilled sampler. Instead of repeatedly sampling the policy model for roughly 50 denoising steps, DMSampler generates reward-evaluation samples in only 4--8 steps while periodically re-distilling the sampler from the updated policy, yielding an order-of-magnitude reduction in rollout cost. The framework alternates between two stages: an RL phase that optimizes the policy using hybrid samples from the old policy and distilled sampler, and a distillation phase that realigns the few-step sampler to the improved policy. Intuitively, the distilled sampler acts as a fast proxy for the current policy during RL, and is refreshed whenever the policy improves so that sampling remains both efficient and aligned. Two designs make this loop stable and effective: hybrid distillation sampling preserves on-policy structure during rollout, and reward-aware distillation reuses high-reward trajectories to reduce forgetting during compression. Experiments on text-to-image and text-to-video generation show that DMSampler improves OCR, GenEval, and VBench performance while substantially reducing GPU hours, and that the same idea can be combined with multiple diffusion RL optimizers. Our code will be available at:\nhttps://github.com/HiDream-ai/DMSampler.",
+      "authors": [
+        "Zunxu Liu",
+        "Aiqiu Wu",
+        "Zhaofan Qiu",
+        "Yingwei Pan",
+        "Ting Yao",
+        "Tao Mei"
+      ],
+      "primary_category": "Diffusion Models",
+      "categories": [
+        "Diffusion Models",
+        "Reinforcement Learning",
+        "Distillation Models"
+      ],
+      "published": "2026-04-30T19:10:17.628+00:00",
+      "link": "https://openreview.net/forum?id=VkMWujvv2c",
+      "pdf_url": "https://openreview.net/pdf/904d3d0e92a77b85385dcc1b5241cc21db82b68e.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-hwfclpdj8d",
+      "source": "ICML-2026-Accepted",
+      "title": "Noisy-Space Policy Gradient for Diffusion Policies in Offline Reinforcement Learning",
+      "abstract": "Diffusion policies offer a powerful and expressive parameterization for continuous control. Yet, their integration with reinforcement learning remains conceptually and algorithmically challenging. In this work, we address this gap by introducing a noisy-space action-value (Q-)function that assigns values to diffusion latents through the distribution of executed actions induced by the denoising process. We show that this construction admits a precise semantic interpretation and derive a noisy-space policy gradient (NSPG) that optimizes noisy latents using only clean action space value estimates. Building on this result, we formulate a KL-regularized policy improvement over noisy latents and show that the resulting objective admits a diffusion-compatible regression form, avoiding backpropagation through the denoising process. Empirical results on state-based D4RL benchmarks and vision-based OGBench tasks demonstrate that the proposed noisy-space objective provides a principled and effective basis for training diffusion policies in offline reinforcement learning. Project webpage: https://mahmoud-selim.github.io/NSPG/",
+      "authors": [
+        "Mahmoud Selim",
+        "Cristina Cipriani",
+        "Karl Henrik Johansson"
+      ],
+      "primary_category": "Offline Reinforcement Learning",
+      "categories": [
+        "Offline Reinforcement Learning",
+        "Diffusion Models"
+      ],
+      "published": "2026-04-30T19:19:02.256+00:00",
+      "link": "https://openreview.net/forum?id=hwfCLpDj8d",
+      "pdf_url": "https://openreview.net/pdf/06c06f3dcb0e7d900315d4acc78423c15ea83d3a.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-k3jeuey9ti",
+      "source": "ICML-2026-Rejected-Public",
+      "title": "A Framework for Diffusion-Based Maximum Entropy Reinforcement Learning Algorithms",
+      "abstract": "Diffusion models have shown strong performance in sampling from complex, unnormalized distributions. Building on this, we reinterpret Maximum Entropy Reinforcement Learning (ME-RL) as a diffusion-based sampling problem. We minimize the reverse KL divergence between a diffusion policy and the optimal policy distribution via a tractable upper bound, and apply the policy gradient theorem to derive a modified surrogate objective that incorporates diffusion dynamics through an augmented MDP and a diffusion-aware Q-function. This yields diffusion-based variants of Proximal Policy Optimization (PPO), Wasserstein Policy Optimization (WPO), and Relative Entropy Pathwise Policy Optimization (REPPO), which we term DME-PPO, DME-WPO, and DME-REPPO. These methods require only minor implementation changes to their base algorithms and, crucially, avoid backpropagation through the full diffusion chain. Experiments on standard continuous-control benchmarks demonstrate strong performance and validate Diffusion-Based Maximum Entropy Reinforcement Learning (DME-RL) as a practical, effective framework.",
+      "authors": [
+        "Sebastian Sanokowski",
+        "Kaustubh Patil"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Diffusion Models",
+        "Maximum Entropy Reinforcement Learning",
+        "Control"
+      ],
+      "published": "2026-01-20T11:02:00.494+00:00",
+      "link": "https://openreview.net/forum?id=k3JEueY9TI",
+      "pdf_url": "https://openreview.net/pdf/e45db536fb2729c1438e5c9d13a83b5f8df8d895.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-mk3xwe7p2t",
+      "source": "ICML-2026-Accepted",
+      "title": "How Does the Lagrangian Guide Safe Reinforcement Learning through Diffusion Models?",
+      "abstract": "Diffusion policy sampling enables reinforcement learning (RL) to represent multimodal action distributions beyond suboptimal unimodal Gaussian policies. However, existing diffusion-based RL methods primarily focus on offline setting for reward maximization, with limited consideration of safety in online settings. To address this gap, we propose Augmented Lagrangian-Guided Diffusion (ALGD), a novel algorithm for off-policy safe RL. By revisiting optimization theory and energy-based modeling, we show that the instability of primal–dual methods arises from the non-convex Lagrangian landscape. In diffusion-based safe RL, the Lagrangian can be interpreted as an energy function guiding the denoising dynamics; counter-intuitively, direct usage destabilizes both policy generation and training. ALGD resolves this issue by introducing an augmented Lagrangian that locally convexifies the energy landscape, yielding a stabilized policy generation and training, without altering the distribution of optimal policy. Theoretical analysis and extensive experiments demonstrate that ALGD is both theoretically grounded and empirically effective, achieving strong and stable performance across diverse environments.",
+      "authors": [
+        "Xiaoyuan Cheng",
+        "Wenxuan Yuan",
+        "Boyang Li",
+        "Yuanchao Xu",
+        "Yiming Yang",
+        "Hao Liang",
+        "Bei Peng",
+        "Robert Loftin",
+        "Zhuo Sun",
+        "Yukun Hu"
+      ],
+      "primary_category": "safe rl",
+      "categories": [
+        "safe rl",
+        "diffusion policy",
+        "energy-based model"
+      ],
+      "published": "2026-04-30T19:09:54.432+00:00",
+      "link": "https://openreview.net/forum?id=mK3xWE7p2T",
+      "pdf_url": "https://openreview.net/pdf/a061183e9334ae0757bda6fba7e965db9892418f.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-3mj9etu319",
+      "source": "ICML-2026-Accepted",
+      "title": "Rethinking the Design Space of Reinforcement Learning for Diffusion Models: On the Importance of Likelihood Estimation Beyond Loss Design",
+      "abstract": "Reinforcement learning has been widely applied to diffusion and flow models for visual tasks such as text-to-image generation. However, these tasks remain challenging because diffusion models have intractable likelihoods, which creates a barrier for directly applying popular policy-gradient type methods. Existing approaches primarily focus on crafting new objectives built on already heavily engineered LLM objectives, using ad hoc estimators for likelihood, without a thorough investigation into how such estimation affects overall algorithmic performance.  In this work, we provide a systematic analysis of the RL design space by disentangling three factors: i) policy-gradient objectives, ii) likelihood estimators, and iii) rollout sampling schemes. We show that adopting an evidence lower bound (ELBO) based model likelihood estimator, computed only from the final generated sample, is the dominant factor enabling effective, efficient, and stable RL optimization, outweighing the impact of the specific policy-gradient loss functional. We validate our findings across multiple reward benchmarks using SD 3.5 Medium, and observe consistent trends across all tasks. Our method improves the GenEval score from $0.24$ to $0.95$ in $90$ GPU hours, which is $4.6\\times$ more efficient than FlowGRPO and $2\\times$ more efficient than the SOTA method DiffusionNFT without reward hacking.",
+      "authors": [
+        "Jaemoo Choi",
+        "Yuchen Zhu",
+        "Wei Guo",
+        "Petr Molodyk",
+        "Bo Yuan",
+        "Jinbin Bai",
+        "Yi Xin",
+        "Molei Tao",
+        "Yongxin Chen"
+      ],
+      "primary_category": "Fine-tuning",
+      "categories": [
+        "Fine-tuning",
+        "Diffusion Models",
+        "Reinforcement Learning",
+        "Policy Optimization",
+        "ELBO",
+        "Reward-based Models"
+      ],
+      "published": "2026-04-30T19:10:05.968+00:00",
+      "link": "https://openreview.net/forum?id=3mJ9eTU319",
+      "pdf_url": "https://openreview.net/pdf/5f18c7399448fd0b9ef9aebe19679073be540dad.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-yvgtyofyud",
+      "source": "ICML-2026-Accepted",
+      "title": "Stabilizing Reinforcement Learning for Diffusion Language Models",
+      "abstract": "Diffusion Large Language Models (dLLMs) often exhibit severe instability during Group Relative Policy Optimization (GRPO) training, limiting the effectiveness of reinforcement learning for improving reasoning capabilities. In dLLMs, the importance ratios used by GRPO are derived from finite-sample estimates rather than exact likelihoods, making them inherently noisy. In this paper, we show that GRPO is highly sensitive to this noise, which drives training instability. Through theoretical analysis and empirical evidence, we identify a self-reinforcing instability loop in which noisy importance ratios induce gradient spikes and policy drift, further amplifying future importance ratio estimation variance. To address this issue, we propose StableDRL, a novel reinforcement learning framework for dLLMs. StableDRL stabilizes training via (i) unconditional clipping to suppress outlier-induced gradient spikes, and (ii) self-normalization to constrain gradients within the convex hull of per-sample updates. We further extend StableDRL to block-wise diffusion models via a staircase attention mechanism. StableDRL is the first method that enables stable, full-parameter reinforcement learning for dLLMs. It achieves the state-of-the-art performance, outperforming prior best full-attention baselines by 6% on MATH500 and block-diffusion baselines by 25.6% on AIME.",
+      "authors": [
+        "Jianyuan Zhong",
+        "Kaibo Wang",
+        "Ding Ding",
+        "Zijin Feng",
+        "Haoli Bai",
+        "Yang Xiang",
+        "Jiacheng Sun",
+        "Qiang Xu"
+      ],
+      "primary_category": "Diffusion Large Language Models; Reinforcement Learning (RL) post-training; Importance sampling",
+      "categories": [
+        "Diffusion Large Language Models; Reinforcement Learning (RL) post-training; Importance sampling"
+      ],
+      "published": "2026-04-30T19:11:34.848+00:00",
+      "link": "https://openreview.net/forum?id=YvGtYoFyud",
+      "pdf_url": "https://openreview.net/pdf/e29e9ce1b706c684af478b30bee1697562b6303f.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-tbz8ixrekd",
+      "source": "ICML-2026-Accepted",
+      "title": "Reinforcement Learning with Discrete Diffusion Policies for Combinatorial Action Spaces",
+      "abstract": "Reinforcement learning (RL) struggles to scale to large, combinatorial action spaces common in many real-world problems. This paper introduces a novel framework for training discrete diffusion models as highly effective policies in these complex settings. Our key innovation is an efficient online training process that ensures stable and effective policy improvement and . By leveraging policy mirror descent (PMD) to define an ideal, regularized target policy distribution, we frame the policy update as a distributional matching problem, training the expressive diffusion model to replicate this stable target. This decoupled approach stabilizes learning and significantly enhances training performance. Our method achieves state-of-the-art results and superior sample efficiency across a diverse set of challenging combinatorial benchmarks, including DNA sequence generation, RL with macro-actions, and multi-agent systems. Experiments demonstrate that our diffusion policies attain comparable or superior performance compared to other baselines. Crucially, our extensive empirical analysis reveals a key trade-off: FKL demonstrates superior sample efficiency and faster initial convergence, whereas RKL ensures stable training and higher asymptotic performance on challenging tasks.",
+      "authors": [
+        "Haitong Ma",
+        "Ofir Nabati",
+        "Aviv Rosenberg",
+        "Bo Dai",
+        "Oran Lang",
+        "Craig Boutilier",
+        "Na Li",
+        "Shie Mannor",
+        "Lior Shani",
+        "Guy Tennenholtz"
+      ],
+      "primary_category": "Discrete diffusion",
+      "categories": [
+        "Discrete diffusion",
+        "Reinforcement Learning",
+        "Policy Mirror Descent"
+      ],
+      "published": "2026-04-30T19:10:15.656+00:00",
+      "link": "https://openreview.net/forum?id=tbz8ixrEKd",
+      "pdf_url": "https://openreview.net/pdf/df4341e660f60af5a35ed702086f0184bfc3c7d3.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-nly2poybrj",
+      "source": "ICML-2026-Accepted",
+      "title": "Advantage Weighted Matching: Aligning RL with Pretraining in Diffusion Models",
+      "abstract": "Reinforcement Learning (RL) has emerged as a central paradigm for advancing Large Language Models (LLMs), where both pre-training and RL post-training stages are grounded in the same log-likelihood formulation. In contrast, recent RL approaches for diffusion models, most notably Denoising Diffusion Policy Optimization (DDPO), optimize an objective different from the pretraining objectives--score/flow matching loss.\nIn this work, we establish a novel theoretical analysis: DDPO is an implicit form of score/flow matching with noisy targets, which increases variance and slows convergence. Building on this analysis, we introduce \\textbf{Advantage Weighted Matching (AWM)}, a policy-gradient method for diffusion. It uses the score/flow-matching loss and reweights each sample by its advantage. In effect, AWM raises the influence of high-reward samples and suppresses low-reward ones while keeping the modeling objective identical to pretraining. \nThis simple yet effective design yields substantial benefits: on the GenEval, OCR, and PickScore benchmarks, AWM delivers up to a $\\mathbf{34}\\times$ speedup over Flow-GRPO (which builds on DDPO), when applied to Stable Diffusion 3.5 Medium and FLUX, without compromising generation quality. Code is available at \\url{https://github.com/scxue/advantage_weighted_matching}.",
+      "authors": [
+        "Shuchen Xue",
+        "Chongjian GE",
+        "Shilong Zhang",
+        "Yichen Li",
+        "Zhi-Ming Ma"
+      ],
+      "primary_category": "Diffusion Model; Reinforcement Learning; Flow Matching",
+      "categories": [
+        "Diffusion Model; Reinforcement Learning; Flow Matching"
+      ],
+      "published": "2026-04-30T19:11:28.295+00:00",
+      "link": "https://openreview.net/forum?id=nLY2pOYBrJ",
+      "pdf_url": "https://openreview.net/pdf/da4575cb055163bb0d0727fb9631e65bc9555c86.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-v3dcfhec5c",
+      "source": "ICML-2026-Accepted",
+      "title": "Value-as-Return: A Two-Stage Framework to Align on the Optimal Score Function",
+      "abstract": "Reinforcement learning with diffusion models has shown strong potential, but existing approaches such as variants of Direct Preference Optimization (DPO) often rely on an inaccurate simplification: they equate trajectory likelihoods with final-state probabilities. This mismatch leads to suboptimal alignment. We address this limitation with a principled framework that leverages the optimal value function as the return for short trajectory segments. Our approach follows a two-stage procedure: (i) learning a value-distribution function to estimate segment-level returns, and (ii) applying our VRPO to refine the score function. We prove that, under sufficient model capacity, the resulting model is equivalent to training a diffusion process on the tilted distribution proportional to $p(x)\\exp(\\eta r(x))$. Experiments on large-scale diffusion models validate our analysis and show stable and consistent improvements over prior methods.",
+      "authors": [
+        "Shikun Sun",
+        "Shuo Huang",
+        "Yiding Chen",
+        "Wen Sun",
+        "Jia Jia"
+      ],
+      "primary_category": "diffusion models",
+      "categories": [
+        "diffusion models",
+        "RL"
+      ],
+      "published": "2026-04-30T19:16:17.624+00:00",
+      "link": "https://openreview.net/forum?id=V3DCFHEC5C",
+      "pdf_url": "https://openreview.net/pdf/a4e5e46d2359e44128b38fd1d8967987b3849378.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-hsdgkuov8n",
+      "source": "ICML-2026-Accepted",
+      "title": "Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies",
+      "abstract": "Behavior cloning with high-capacity generative policies achieves strong imitation performance, but is often limited by demonstration coverage and distribution shift. Direct reinforcement learning fine-tuning can improve performance, but updating large action decoders is frequently unstable and sample inefficient. We propose **Lagrangian Perturbation Diffusion Steering (LP-DS)**, a lightweight adaptation method that improves a frozen generative policy by learning a compact noise-space perturbation before decoding. LP-DS optimizes this perturbation with a Lagrangian trust-region objective, improving downstream value while constraining deviation from the latent prior. Across RoboMimic manipulation, OpenAI Gym locomotion, and Adroit dexterous manipulation benchmarks, LP-DS improves sample efficiency, success, and return while maintaining higher action-space entropy than unconstrained noise-space steering, with return improvements of up to 25\\% over prior baselines. Additional evaluations with flow-matching backbones, a large vision-language-action model, and physical Franka deployment show that LP-DS is not limited to compact diffusion policies or simulated benchmarks. Project page: https://sites.google.com/view/lp-ds/home.",
+      "authors": [
+        "Hikmet Simsir",
+        "Ozgur S. Oguz"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Diffusion Models",
+        "Generative Policies",
+        "Policy Fine-tuning",
+        "Constrained Optimization",
+        "Trust Region Methods",
+        "Offline-to-Online RL",
+        "Robotic Manipulation"
+      ],
+      "published": "2026-04-30T19:22:17.68+00:00",
+      "link": "https://openreview.net/forum?id=HsdgKuOV8n",
+      "pdf_url": "https://openreview.net/pdf/7ed52fb320275f6369d4dea5b17838403c1ae9b6.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-2rgr38p5az",
+      "source": "ICML-2026-Accepted",
+      "title": "Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning",
+      "abstract": "Diffusion-based Q-learning has emerged as a powerful paradigm for offline reinforcement learning, but its reliance on multi-step denoising makes both training and inference computationally expensive and brittle. Recent efforts to accelerate diffusion Q-learning toward single-step action generation typically introduce auxiliary networks, policy distillation, or multi-phase training, which frequently compromise simplicity, stability, or performance.\nTo address these limitations, we introduce Bootstrapped Flow Q-Learning (BFQ), a novel framework that enables accurate single-step action generation during both training and inference—without auxiliary networks or distillation procedures. BFQ adopts a divide-and-conquer view of the displacement vector along the flow path: it begins by learning short-range displacements that can be accurately estimated from the Flow Matching marginal velocity, and bootstraps these components to directly learn a noise-to-action mapping in a single step. This formulation eliminates multi-step denoising, resulting in a learning procedure that is substantially faster, simpler, and more robust. Extensive D4RL evaluations show that BFQ improves performance while significantly reducing computational cost compared to multi-step diffusion baselines, demonstrating that single-step action generation suffices for high-performance offline Reinforcement Learning.",
+      "authors": [
+        "Thanh Xuan Nguyen",
+        "Tri Ton",
+        "Hongbin Choe",
+        "Tung Minh Luu",
+        "Chang D. Yoo"
+      ],
+      "primary_category": "Offline Reinforcement Learning",
+      "categories": [
+        "Offline Reinforcement Learning",
+        "Generative Policy",
+        "Q-Learning"
+      ],
+      "published": "2026-04-30T19:09:35.003+00:00",
+      "link": "https://openreview.net/forum?id=2rGr38p5az",
+      "pdf_url": "https://openreview.net/pdf/f0daa97cd6fb287283985e583d1f9444cd7f38d5.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-igtmjtehxq",
+      "source": "ICML-2026-Accepted",
+      "title": "Diffusion Controller: Framework, Algorithms and Parameterization",
+      "abstract": "Controllable diffusion generation often relies on various heuristics that are seemingly disconnected without a unified understanding. We bridge this gap with Diffusion Controller (DiffCon), a unified control-theoretic view that casts reverse diffusion sampling as state-only stochastic control within (generalized) linearly-solvable Markov Decision Processes (LS-MDPs). Under this framework, control acts by reweighting the pretrained reverse-time transition kernels, balancing terminal objectives against an $f$-divergence cost. From the resulting optimality conditions, we derive practical reinforcement learning methods for diffusion fine-tuning: (i) $f$-divergence-regularized policy-gradient updates, including a PPO-style rule, and (ii) a regularizer-determined reward-weighted regression objective with a minimizer-preservation guarantee under the Kullback–Leibler (KL) divergence. The LS-MDP framework further implies a principled model form: the optimal score decomposes into a fixed pretrained baseline plus a lightweight control correction, motivating a side-network parameterization conditioned on exposed intermediate denoising outputs, enabling effective *gray-box adaptation* with a frozen backbone. Experiments on Stable Diffusion v1.4 across supervised and reward-driven finetuning show consistent gains in preference-alignment win rates and improved quality–efficiency trade-offs versus gray-box baselines and even the parameter-efficient white-box adapter LoRA.",
+      "authors": [
+        "Tong Yang",
+        "Moonkyung Ryu",
+        "Chih-Wei Hsu",
+        "Guy Tennenholtz",
+        "Yuejie Chi",
+        "Craig Boutilier",
+        "Bo Dai"
+      ],
+      "primary_category": "diffusion",
+      "categories": [
+        "diffusion",
+        "reinforcement learning",
+        "controllable generation",
+        "text-to-image",
+        "representation learning"
+      ],
+      "published": "2026-04-30T19:21:04.983+00:00",
+      "link": "https://openreview.net/forum?id=IGTMjtehxq",
+      "pdf_url": "https://openreview.net/pdf/04e003861511e6de9556c0f76e1ef39c9075a3a4.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-we5wzlukf5",
+      "source": "ICML-2026-Accepted",
+      "title": "BiTrajDiff: Bidirectional Trajectory Generation with Diffusion Models for Offline Reinforcement Learning",
+      "abstract": "Offline Reinforcement Learning (RL) relies on static datasets and often enforces conservative constraints to mitigate out-of-distribution errors, but this inevitably gives rise to learning dataset biases and limited behavioral generalization.\nRecent Data Augmentation (DA) methods leverage generative models to enrich offline data, yet they mainly operate within a single rollout paradigm and tend to preserve the original trajectory-level connectivity of the dataset.\nAs a result, such methods often introduce local variations and fail to recover connections between distinct behavior patterns.\nIn this paper, we propose Bidirectional Trajectory Diffusion (BiTrajDiff), a novel DA framework that explicitly addresses this limitation.\nBiTrajDiff decomposes trajectory synthesis into two independent diffusion processes that generate forward-future and backward-history segments conditioned on shared intermediate anchor states.\nBy stitching the generated segments at these anchors, BiTrajDiff can synthesize trajectories that bridge disconnected behavior patterns and recover global trajectory-level connectivity absent from the original data.\nExtensive experiments demonstrate that BiTrajDiff consistently outperforms advanced DA methods across a range of offline RL backbones. Our code is available at [https://github.com/Plankson/BiTrajDiff](https://github.com/Plankson/BiTrajDiff).",
+      "authors": [
+        "Yunpeng Qing",
+        "Yixiao Chi",
+        "Shuo Chen",
+        "Shunyu Liu",
+        "Kexuan Zhou",
+        "Sixu Lin",
+        "Litao Liu",
+        "Changqing Zou"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Data Synthesize"
+      ],
+      "published": "2026-04-30T19:11:14.838+00:00",
+      "link": "https://openreview.net/forum?id=We5wZLUkF5",
+      "pdf_url": "https://openreview.net/pdf/3cd815218cf3924f66dbd1f041945f3116ab071f.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-thy0g4phcr",
+      "source": "ICML-2026-Accepted",
+      "title": "Diffusing to Coordinate: Efficient Online Multi-Agent Diffusion Policies",
+      "abstract": "Online Multi-Agent Reinforcement Learning (MARL) is a prominent framework for efficient agent coordination. Crucially, enhancing policy expressiveness is pivotal for achieving superior performance. Diffusion-based generative models are well-positioned to meet this demand, having demonstrated remarkable expressiveness and multimodal representation in image generation and offline settings. Yet, their potential in online MARL remains largely under-explored. A major obstacle is that the intractable likelihoods of diffusion models impede entropy-based exploration and coordination. To tackle this challenge, we propose among the first Online off-policy MARL framework using Diffusion policies (**OMAD**) to orchestrate coordination. Our key innovation is a relaxed policy objective that maximizes scaled joint entropy, facilitating effective exploration without relying on tractable likelihood. Complementing this, within the centralized training with decentralized execution (CTDE) paradigm, we employ a joint distributional value function to optimize decentralized diffusion policies. It leverages tractable entropy-augmented targets to guide the simultaneous updates of diffusion policies, thereby ensuring stable coordination. Extensive evaluations on MPE and MAMuJoCo establish our method as the new state-of-the-art across $10$ diverse tasks, demonstrating a remarkable $2.5\\times$ to $5\\times$ improvement in sample efficiency.",
+      "authors": [
+        "Zhuoran Li",
+        "Hai Zhong",
+        "Xun Wang",
+        "Qingxin Xia",
+        "Lihua Zhang",
+        "Longbo Huang"
+      ],
+      "primary_category": "Diffusion Policy",
+      "categories": [
+        "Diffusion Policy",
+        "Multi-agent Reinforcement Learning."
+      ],
+      "published": "2026-04-30T19:08:58.639+00:00",
+      "link": "https://openreview.net/forum?id=tHY0G4PhCR",
+      "pdf_url": "https://openreview.net/pdf/afbc655ad511370e785f57d1e291b0e2d05db17b.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-mgu2fs7kjt",
+      "source": "ICML-2026-Accepted",
+      "title": "Trust-Region Diffusion Policies for Massively Parallel On-Policy RL",
+      "abstract": "Reinforcement learning with massively parallel simulations has become a standard framework for developing robust, deployable policies; however, most existing approaches still rely on simple Gaussian policy parameterizations. Diffusion models provide a more expressive policy class and have shown strong performance on challenging control problems, yet most diffusion-based RL methods are designed for offline or off-policy training. In this work, we ask whether diffusion policies can be trained effectively in the massively parallel, on-policy regime. To this end, we introduce Trust-region Diffusion Policies (TruDi), which enables diffusion policies for on-policy RL with massively parallel simulations. This setting is particularly challenging because the data distribution changes quickly across updates, making stable training with complex policies difficult. TruDi addresses this by integrating a trust-region optimization rule to enforce a KL-divergence constraint over the entire diffusion trajectory. Empirically, we evaluate TruDi on a diverse set of 4 massively parallel RL benchmarks comprising a total of 73 tasks. Across these tasks, TruDi consistently outperforms or is on-par with strong baselines on standard tasks and achieves clear gains on more challenging humanoid control tasks, establishing a strong new baseline for massively parallel on-policy RL.",
+      "authors": [
+        "Huy Le",
+        "Onur Celik",
+        "Denis Blessing",
+        "Tai Hoang",
+        "Claas A Voelcker",
+        "Axel Brunnbauer",
+        "Felix Richter",
+        "Michael Volpp",
+        "Gerhard Neumann"
+      ],
+      "primary_category": "Reinforcement Learning",
+      "categories": [
+        "Reinforcement Learning",
+        "Diffusion Policies",
+        "Massively Parallel RL",
+        "Trust Region for RL"
+      ],
+      "published": "2026-04-30T19:18:34.134+00:00",
+      "link": "https://openreview.net/forum?id=mGu2fs7kJt",
+      "pdf_url": "https://openreview.net/pdf/453e1df2f47289203610c510a0a76f03c5fd781b.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-jwlsuhdydc",
+      "source": "ICML-2026-Accepted",
+      "title": "Temporal Difference Learning for Diffusion Models",
+      "abstract": "Diffusion models are typically trained with objectives that focus on local denoising targets at individual time steps (or adjacent pairs), which do not enforce consistency between predictions along the denoising trajectory. This lack of cross-time consistency can degrade performance, especially for few-step samplers. We introduce a temporal difference (TD) objective that penalizes inconsistency of the model’s \\emph{multi-step} progress along the denoising path. By reformulating the diffusion process as a Markov reward process and casting denoising as a policy evaluation problem in reinforcement learning, we derive a unified TD approach that applies to both discrete- and continuous-time diffusion formulations. We further propose a principled sample-based reweighting method that stabilizes training. Empirically, we show that using our TD training can significantly improve sample quality measured by FID, with stronger advantages when the number of sampling steps is small, highlighting its practical utility under low-computation-budget scenarios. We provide ablation studies to justify our design choices, including pairwise loss reweighting, regularization weight, and one-step stride. Overall, our TD approach can be a general drop-in that enforces cross-time consistency and improves generation quality across different diffusion generative models.",
+      "authors": [
+        "Qizhen Ying",
+        "Yangchen Pan",
+        "Victor Adrian Prisacariu",
+        "Junfeng Wen"
+      ],
+      "primary_category": "Diffusion Models",
+      "categories": [
+        "Diffusion Models",
+        "Temporal-difference learning",
+        "Generative models",
+        "Reinforcement learning"
+      ],
+      "published": "2026-04-30T19:17:56.665+00:00",
+      "link": "https://openreview.net/forum?id=jwLSuhDyDc",
+      "pdf_url": "https://openreview.net/pdf/f71409e9163d4f69b7ebef76510629bbaf5b1fe8.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-tlw4tc7zn9",
+      "source": "ICML-2026-Accepted",
+      "title": "Improving Diffusion Planners by Self-Supervised Action Gating with Energies",
+      "abstract": "Diffusion planners are a strong approach for offline reinforcement learning, but they can fail when value-guided selection favours trajectories that score well yet are locally inconsistent with the environment dynamics, resulting in brittle execution. We propose Self-supervised Action Gating with Energies (SAGE), an inference-time re-ranking method that penalises dynamically inconsistent plans using a latent consistency signal. SAGE trains a Joint-Embedding Predictive Architecture (JEPA) encoder on offline state sequences and an action-conditioned latent predictor for short horizon transitions. At test time, SAGE assigns each sampled candidate an energy given by its latent prediction error and combines this feasibility score with value estimates to select actions. SAGE can integrates into existing diffusion planning pipelines that can sample trajectories and select actions via value scoring; it requires no environment rollouts and no policy re-training. Across locomotion, navigation, and manipulation benchmarks, SAGE improves the performance and robustness of diffusion planners.",
+      "authors": [
+        "Yuan Lu",
+        "Dongqi Han",
+        "Yansen Wang",
+        "Dongsheng Li"
+      ],
+      "primary_category": "Offline Reinforcement Learning",
+      "categories": [
+        "Offline Reinforcement Learning",
+        "Diffusion Planners",
+        "Decision Making",
+        "Planning",
+        "Self-Supervised Learning"
+      ],
+      "published": "2026-04-30T19:10:17.399+00:00",
+      "link": "https://openreview.net/forum?id=tLW4Tc7Zn9",
+      "pdf_url": "https://openreview.net/pdf/fda8852a7b6798c4ab5dea9a56014bd334160bd1.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-4w9dpowgcs",
+      "source": "ICML-2026-Accepted",
+      "title": "TDM-R1: Reinforcing Few-Step Diffusion Models with Non-Differentiable Reward",
+      "abstract": "While few-step generative models have enabled powerful image and video generation at significantly lower cost, generic reinforcement learning (RL) paradigms for few-step models remain an unsolved problem. Existing RL approaches for few-step diffusion models strongly rely on back-propagating through differentiable reward models, thereby excluding the majority of important real-world reward signals, e.g., non-differentiable rewards such as humans' binary likeness, object counts, etc. \nTo properly incorporate non-differentiable rewards to improve few-step generative models, we introduce TDM-R1, a novel reinforcement learning paradigm built upon a leading few-step model, Trajectory Distribution Matching (TDM). \nTDM-R1 decouples the learning process into surrogate reward learning and generator learning.\nFurthermore, we developed practical methods to obtain per-step reward signals along the deterministic generation trajectory of TDM, resulting in a unified RL post-training method that significantly improves few-step models' ability with generic rewards.\nWe conduct extensive experiments ranging from text-rendering, visual quality, and preference alignment. \nAll results demonstrate that TDM-R1 is a powerful reinforcement learning paradigm for one- and few-step text-to-image models, scaling from 0.6B to 6B parameters while achieving state-of-the-art performance on both in-domain and out-of-domain metrics.",
+      "authors": [
+        "Yihong Luo",
+        "Tianyang Hu",
+        "Weijian Luo",
+        "Jing Tang"
+      ],
+      "primary_category": "Reinforcement Learning; Few Step Diffusion Models;  Image Generation",
+      "categories": [
+        "Reinforcement Learning; Few Step Diffusion Models;  Image Generation"
+      ],
+      "published": "2026-04-30T19:22:26.283+00:00",
+      "link": "https://openreview.net/forum?id=4w9DpowGcs",
+      "pdf_url": "https://openreview.net/pdf/db912a00a6bbca0d868f0b2a70d1a2816009a052.pdf",
+      "tags": [
+        "keyword:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-88h3v90wzo",
+      "source": "ICML-2026-Accepted",
+      "title": "Mean Flow Policy Optimization",
+      "abstract": "Diffusion models have recently emerged as expressive policy representations for online reinforcement learning (RL). However, their iterative generative processes introduce substantial training and inference overhead. To overcome this limitation, we propose to represent policies using MeanFlow models, a class of few-step flow-based generative models, to improve training and inference efficiency over diffusion-based RL approaches. To promote exploration, we optimize MeanFlow policies under the maximum entropy RL framework via soft policy iteration, and address two key challenges specific to MeanFlow policies: action likelihood evaluation and soft policy improvement. Experiments on MuJoCo, DeepMind Control Suite and HumanoidBench benchmarks demonstrate that our method, Mean Flow Policy Optimization (MFPO), achieves performance comparable to or exceeding current diffusion-based baselines while considerably reducing training and inference time.  Our code is available at https://github.com/dongxiaoyi-xyz/MFPO.",
+      "authors": [
+        "Xiaoyi Dong",
+        "Xi Sheryl Zhang",
+        "Jian Cheng"
+      ],
+      "primary_category": "reinforcement learning",
+      "categories": [
+        "reinforcement learning",
+        "diffusion models",
+        "soft actor critic"
+      ],
+      "published": "2026-04-30T19:13:49.247+00:00",
+      "link": "https://openreview.net/forum?id=88H3V90Wzo",
+      "pdf_url": "https://openreview.net/pdf/d8666163ffb807f568b53c45984a0e27d6ae3725.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-s3pssbv7fz",
+      "source": "ICML-2026-Rejected-Public",
+      "title": "Coefficients-Preserving Sampling for Reinforcement Learning with Flow Matching",
+      "abstract": "Reinforcement Learning (RL) has recently emerged as a powerful technique for improving image and video generation in Diffusion and Flow Matching models, specifically for enhancing output quality and alignment with prompts. A critical step for applying online RL methods on Flow Matching is the introduction of stochasticity into the deterministic framework, commonly realized by Stochastic Differential Equation (SDE). Our investigation reveals a significant drawback to this approach: SDE-based sampling introduces pronounced noise artifacts in the generated images, which we found to be detrimental to the reward learning process. A rigorous theoretical analysis traces the origin of this noise to an excess of stochasticity injected during inference. To address this, we draw inspiration from Denoising Diffusion Implicit Models (DDIM) to reformulate the sampling process. Our proposed method, Coefficients-Preserving Sampling (CPS), eliminates these noise artifacts. This leads to more accurate reward modeling, ultimately enabling faster and more stable convergence for reinforcement learning-based optimizers like Flow-GRPO and Dance-GRPO.",
+      "authors": [
+        "Feng Wang",
+        "Zihao Yu"
+      ],
+      "primary_category": "Flow Matching",
+      "categories": [
+        "Flow Matching",
+        "SDE",
+        "Reinforcement Learning"
+      ],
+      "published": "2026-01-22T02:10:27.39+00:00",
+      "link": "https://openreview.net/forum?id=s3Pssbv7fz",
+      "pdf_url": "https://openreview.net/pdf/f5d1a826dbd2a7a6db72c9f1b1be78563b4001da.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    },
+    {
+      "id": "openreview-icml-2026-wjcftjriqv",
+      "source": "ICML-2026-Accepted",
+      "title": "UDM-GRPO: Stable and Efficient Group Relative Policy Optimization for Uniform Discrete Diffusion Models",
+      "abstract": "Uniform Discrete Diffusion Model (UDM) has recently emerged as a promising paradigm for discrete generative modeling; however, its integration with reinforcement learning remains largely unexplored. We observe that naively applying GRPO to UDM leads to training instability and marginal performance gains. To address this, we propose **UDM-GRPO**, the first framework to integrate UDM with RL. Our method is guided by two key insights: (i) treating the final clean sample as the action provides more accurate and stable optimization signals; and (ii) reconstructing trajectories via the diffusion forward process better aligns probability paths with the pretraining distribution. Additionally, we introduce two strategies, Reduced-Step and CFG-Free, to further improve training efficiency. **UDM-GRPO** significantly improves base model performance across multiple T2I tasks. Notably, GenEval accuracy improves from $69\\\\%$ to $96\\\\%$ and PickScore increases from $20.46$ to $23.81$, achieving state-of-the-art performance in both continuous and discrete settings. On the OCR benchmark, accuracy rises from $8\\\\%$ to $57\\\\%$, further validating the generalization ability of our method. Code is available at https://github.com/Yovecent/UDM-GRPO.",
+      "authors": [
+        "Jiaqi Wang",
+        "Haoge Deng",
+        "Ting Pan",
+        "Yang Liu",
+        "Chengyuan Wang",
+        "Fan Zhang",
+        "Yonggang Qi",
+        "Xinlong Wang"
+      ],
+      "primary_category": "reinforcement learning",
+      "categories": [
+        "reinforcement learning",
+        "discrete flow matching",
+        "text-to-image generation"
+      ],
+      "published": "2026-04-30T19:13:47.602+00:00",
+      "link": "https://openreview.net/forum?id=WJcFtJriqv",
+      "pdf_url": "https://openreview.net/pdf/ed3289b3bbfc4f6c1a69cec7a50111a44c8fe066.pdf",
+      "tags": [
+        "keyword:diffusion-rl",
+        "query:diffusion-rl"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "type": "intent_query",
+      "tag": "diffusion-rl",
+      "paper_tag": "query:diffusion-rl",
+      "query_text": "Applications of diffusion models for sample efficient reinforcement learning",
+      "sim_scores": {
+        "openreview-icml-2026-igtmjtehxq": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        },
+        "openreview-icml-2026-v3dcfhec5c": {
+          "score": 0.014705882352941176,
+          "rank": 8
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-icml-2026-s3pssbv7fz": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-icml-2026-88h3v90wzo": {
+          "score": 0.013888888888888888,
+          "rank": 12
+        },
+        "openreview-icml-2026-edpv55htq6": {
+          "score": 0.0136986301369863,
+          "rank": 13
+        },
+        "openreview-icml-2026-vkmwujvv2c": {
+          "score": 0.013333333333333334,
+          "rank": 15
+        },
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.013157894736842105,
+          "rank": 16
+        },
+        "openreview-icml-2026-thy0g4phcr": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        },
+        "openreview-icml-2026-jwlsuhdydc": {
+          "score": 0.012345679012345678,
+          "rank": 21
+        },
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.012195121951219513,
+          "rank": 22
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.011904761904761904,
+          "rank": 24
+        },
+        "openreview-icml-2026-hwfclpdj8d": {
+          "score": 0.011764705882352941,
+          "rank": 25
+        },
+        "openreview-icml-2026-3mj9etu319": {
+          "score": 0.011494252873563218,
+          "rank": 27
+        },
+        "openreview-icml-2026-yvgtyofyud": {
+          "score": 0.011363636363636364,
+          "rank": 28
+        },
+        "openreview-icml-2026-nly2poybrj": {
+          "score": 0.01,
+          "rank": 40
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-icml-2026-g9uw8lfwep",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-4qlptaboir",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-3mj9etu319",
+          "score": 0.9586435070306036,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-k3jeuey9ti",
+          "score": 0.9586435070306036,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-mcvjybwmpt",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-vkmwujvv2c",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-mk3xwe7p2t",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-tbz8ixrekd",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-vupee4yd1t",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-we5wzlukf5",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-88h3v90wzo",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-wjcftjriqv",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-hwfclpdj8d",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-8atkbixm7u",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-yvgtyofyud",
+          "score": 0.73604826546003,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-mgu2fs7kjt",
+          "score": 0.73604826546003,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-nly2poybrj",
+          "score": 0.702712746191007,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-jwlsuhdydc",
+          "score": 0.702712746191007,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-4w9dpowgcs",
+          "score": 0.6703296703296702,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-igtmjtehxq",
+          "score": 0.6388587937883712,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-hsdgkuov8n",
+          "score": 0.6388587937883712,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-v3dcfhec5c",
+          "score": 0.608262108262108,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-2rgr38p5az",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-uzf4ssk12k",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-tlw4tc7zn9",
+          "score": 0.5495495495495496,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-thy0g4phcr",
+          "score": 0.5495495495495496,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-ruheyl9bb9",
+          "score": 0.5213675213675214,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-dsxn7vuwa3",
+          "score": 0.5213675213675214,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-s3pssbv7fz",
+          "score": 0.49392712550607265,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-agn2cgtciw",
+          "score": 0.46719946719946726,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-l6vw6cvkhi",
+          "score": 0.3910256410256411,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-edpv55htq6",
+          "score": 0.3433395872420263,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-jo7mt1xbuq",
+          "score": 0.21328671328671328,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-yitfnjursw",
+          "score": 0.21328671328671328,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-qgakuqzybc",
+          "score": 0.1360089186176142,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-5pqiaadn7e",
+          "score": 0.11772814998621459,
+          "star_rating": 3
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "diffusion-rl",
+      "paper_tag": "query:diffusion-rl",
+      "query_text": "How to improve sample efficiency in diffusion based reinforcement learning?",
+      "sim_scores": {
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.028438886647841874,
+          "rank": 1
+        },
+        "openreview-icml-2026-thy0g4phcr": {
+          "score": 0.027692895339954164,
+          "rank": 2
+        },
+        "openreview-icml-2026-3mj9etu319": {
+          "score": 0.026262626262626265,
+          "rank": 4
+        },
+        "openreview-icml-2026-dsxn7vuwa3": {
+          "score": 0.01639344262295082,
+          "rank": 6
+        },
+        "openreview-icml-2026-igtmjtehxq": {
+          "score": 0.01639344262295082,
+          "rank": 7
+        },
+        "openreview-icml-2026-wjcftjriqv": {
+          "score": 0.016129032258064516,
+          "rank": 8
+        },
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.016129032258064516,
+          "rank": 9
+        },
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.015873015873015872,
+          "rank": 10
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.015625,
+          "rank": 12
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.015151515151515152,
+          "rank": 14
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.014925373134328358,
+          "rank": 15
+        },
+        "openreview-icml-2026-jwlsuhdydc": {
+          "score": 0.014492753623188406,
+          "rank": 17
+        },
+        "openreview-icml-2026-88h3v90wzo": {
+          "score": 0.014285714285714285,
+          "rank": 18
+        },
+        "openreview-icml-2026-s3pssbv7fz": {
+          "score": 0.014084507042253521,
+          "rank": 19
+        },
+        "openreview-icml-2026-v3dcfhec5c": {
+          "score": 0.013888888888888888,
+          "rank": 20
+        },
+        "openreview-icml-2026-vkmwujvv2c": {
+          "score": 0.013333333333333334,
+          "rank": 22
+        },
+        "openreview-icml-2026-hwfclpdj8d": {
+          "score": 0.013157894736842105,
+          "rank": 23
+        },
+        "openreview-icml-2026-edpv55htq6": {
+          "score": 0.01282051282051282,
+          "rank": 24
+        },
+        "openreview-icml-2026-yvgtyofyud": {
+          "score": 0.012195121951219513,
+          "rank": 28
+        },
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.012048192771084338,
+          "rank": 29
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.01098901098901099,
+          "rank": 35
+        },
+        "openreview-icml-2026-nly2poybrj": {
+          "score": 0.010416666666666666,
+          "rank": 40
+        },
+        "openreview-icml-2026-tlw4tc7zn9": {
+          "score": 0.009345794392523364,
+          "rank": 50
+        },
+        "openreview-icml-2026-2rgr38p5az": {
+          "score": 0.009259259259259259,
+          "rank": 51
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-icml-2026-g9uw8lfwep",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-4qlptaboir",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-mcvjybwmpt",
+          "score": 0.9586435070306036,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-vkmwujvv2c",
+          "score": 0.9586435070306036,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-ruheyl9bb9",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-uzf4ssk12k",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2026-vupee4yd1t",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-dsxn7vuwa3",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-jo7mt1xbuq",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-k3jeuey9ti",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-qgakuqzybc",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-88h3v90wzo",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-5pqiaadn7e",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-8atkbixm7u",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-tbz8ixrekd",
+          "score": 0.73604826546003,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-l6vw6cvkhi",
+          "score": 0.702712746191007,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-hsdgkuov8n",
+          "score": 0.702712746191007,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-v3dcfhec5c",
+          "score": 0.6703296703296702,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-s3pssbv7fz",
+          "score": 0.6388587937883712,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-edpv55htq6",
+          "score": 0.6388587937883712,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-igtmjtehxq",
+          "score": 0.608262108262108,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-agn2cgtciw",
+          "score": 0.608262108262108,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-yitfnjursw",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-wjcftjriqv",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-mgu2fs7kjt",
+          "score": 0.5495495495495496,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-2rgr38p5az",
+          "score": 0.5213675213675214,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-tlw4tc7zn9",
+          "score": 0.5213675213675214,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-icml-2026-jwlsuhdydc",
+          "score": 0.49392712550607265,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-3mj9etu319",
+          "score": 0.49392712550607265,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-thy0g4phcr",
+          "score": 0.46719946719946726,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-hwfclpdj8d",
+          "score": 0.41577409931840303,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-we5wzlukf5",
+          "score": 0.41577409931840303,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-yvgtyofyud",
+          "score": 0.3433395872420263,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-mk3xwe7p2t",
+          "score": 0.32035835650293487,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-4w9dpowgcs",
+          "score": 0.23371647509578536,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-icml-2026-nly2poybrj",
+          "score": 0.1933160472486314,
+          "star_rating": 3
+        }
+      ]
+    },
+    {
+      "type": "keyword",
+      "tag": "diffusion-rl",
+      "paper_tag": "keyword:diffusion-rl",
+      "query_text": "diffusion policy reinforcement learning",
+      "sim_scores": {
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.03200204813108039,
+          "rank": 1
+        },
+        "openreview-icml-2026-hwfclpdj8d": {
+          "score": 0.031099324975891997,
+          "rank": 2
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.030798389007344232,
+          "rank": 3
+        },
+        "openreview-icml-2026-thy0g4phcr": {
+          "score": 0.030303030303030304,
+          "rank": 4
+        },
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.02946236559139785,
+          "rank": 5
+        },
+        "openreview-icml-2026-88h3v90wzo": {
+          "score": 0.029273504273504274,
+          "rank": 6
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.028782894736842105,
+          "rank": 7
+        },
+        "openreview-icml-2026-igtmjtehxq": {
+          "score": 0.028612012987012988,
+          "rank": 8
+        },
+        "openreview-icml-2026-mgu2fs7kjt": {
+          "score": 0.028438886647841874,
+          "rank": 9
+        },
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.025833333333333333,
+          "rank": 10
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.025657894736842105,
+          "rank": 11
+        },
+        "openreview-icml-2026-2rgr38p5az": {
+          "score": 0.02492401215805471,
+          "rank": 12
+        },
+        "openreview-icml-2026-yvgtyofyud": {
+          "score": 0.024414620217018845,
+          "rank": 13
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.023296291337528453,
+          "rank": 17
+        },
+        "openreview-icml-2026-tlw4tc7zn9": {
+          "score": 0.02262443438914027,
+          "rank": 19
+        },
+        "openreview-icml-2026-hsdgkuov8n": {
+          "score": 0.015384615384615385,
+          "rank": 23
+        },
+        "openreview-icml-2026-vkmwujvv2c": {
+          "score": 0.014492753623188406,
+          "rank": 24
+        },
+        "openreview-icml-2026-jwlsuhdydc": {
+          "score": 0.014084507042253521,
+          "rank": 27
+        },
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.012345679012345678,
+          "rank": 35
+        },
+        "openreview-icml-2026-wjcftjriqv": {
+          "score": 0.011494252873563218,
+          "rank": 43
+        },
+        "openreview-icml-2026-jo7mt1xbuq": {
+          "score": 0.011235955056179775,
+          "rank": 47
+        },
+        "openreview-icml-2026-3mj9etu319": {
+          "score": 0.011111111111111112,
+          "rank": 48
+        },
+        "openreview-icml-2026-dsxn7vuwa3": {
+          "score": 0.01098901098901099,
+          "rank": 50
+        },
+        "openreview-icml-2026-8atkbixm7u": {
+          "score": 0.010869565217391304,
+          "rank": 52
+        },
+        "openreview-icml-2026-nly2poybrj": {
+          "score": 0.010638297872340425,
+          "rank": 55
+        },
+        "openreview-icml-2026-uzf4ssk12k": {
+          "score": 0.009708737864077669,
+          "rank": 67
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "diffusion-rl",
+      "paper_tag": "keyword:diffusion-rl",
+      "query_text": "diffusion reinforcement learning",
+      "sim_scores": {
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.03200204813108039,
+          "rank": 1
+        },
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.03125763125763126,
+          "rank": 2
+        },
+        "openreview-icml-2026-hwfclpdj8d": {
+          "score": 0.030834914611005692,
+          "rank": 3
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.02964426877470356,
+          "rank": 4
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.028594771241830064,
+          "rank": 5
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.028370221327967807,
+          "rank": 6
+        },
+        "openreview-icml-2026-igtmjtehxq": {
+          "score": 0.028283227848101264,
+          "rank": 7
+        },
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.027402402402402402,
+          "rank": 9
+        },
+        "openreview-icml-2026-yvgtyofyud": {
+          "score": 0.02712049508554787,
+          "rank": 10
+        },
+        "openreview-icml-2026-thy0g4phcr": {
+          "score": 0.026973565905412694,
+          "rank": 11
+        },
+        "openreview-icml-2026-88h3v90wzo": {
+          "score": 0.026373626373626377,
+          "rank": 12
+        },
+        "openreview-icml-2026-vkmwujvv2c": {
+          "score": 0.025917252146760345,
+          "rank": 13
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.02523809523809524,
+          "rank": 14
+        },
+        "openreview-icml-2026-tlw4tc7zn9": {
+          "score": 0.025062266500622665,
+          "rank": 15
+        },
+        "openreview-icml-2026-v3dcfhec5c": {
+          "score": 0.02438307873090482,
+          "rank": 16
+        },
+        "openreview-icml-2026-2rgr38p5az": {
+          "score": 0.024350649350649352,
+          "rank": 17
+        },
+        "openreview-icml-2026-mgu2fs7kjt": {
+          "score": 0.024127906976744187,
+          "rank": 18
+        },
+        "openreview-icml-2026-3mj9etu319": {
+          "score": 0.015151515151515152,
+          "rank": 25
+        },
+        "openreview-icml-2026-nly2poybrj": {
+          "score": 0.0136986301369863,
+          "rank": 28
+        },
+        "openreview-icml-2026-hsdgkuov8n": {
+          "score": 0.013157894736842105,
+          "rank": 29
+        },
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.012987012987012988,
+          "rank": 31
+        },
+        "openreview-icml-2026-we5wzlukf5": {
+          "score": 0.012345679012345678,
+          "rank": 35
+        },
+        "openreview-icml-2026-jwlsuhdydc": {
+          "score": 0.011494252873563218,
+          "rank": 42
+        },
+        "openreview-icml-2026-4w9dpowgcs": {
+          "score": 0.011111111111111112,
+          "rank": 45
+        },
+        "openreview-icml-2026-s3pssbv7fz": {
+          "score": 0.010869565217391304,
+          "rank": 48
+        },
+        "openreview-icml-2026-jo7mt1xbuq": {
+          "score": 0.010526315789473684,
+          "rank": 54
+        },
+        "openreview-icml-2026-wjcftjriqv": {
+          "score": 0.010309278350515464,
+          "rank": 57
+        },
+        "openreview-icml-2026-dsxn7vuwa3": {
+          "score": 0.00909090909090909,
+          "rank": 77
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "diffusion-rl",
+      "paper_tag": "keyword:diffusion-rl",
+      "query_text": "reinforcement learning diffusion",
+      "sim_scores": {
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.03177805800756621,
+          "rank": 1
+        },
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.031746031746031744,
+          "rank": 2
+        },
+        "openreview-icml-2026-hwfclpdj8d": {
+          "score": 0.030834914611005692,
+          "rank": 3
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.02964426877470356,
+          "rank": 4
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.028594771241830064,
+          "rank": 6
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.028370221327967807,
+          "rank": 7
+        },
+        "openreview-icml-2026-igtmjtehxq": {
+          "score": 0.028283227848101264,
+          "rank": 8
+        },
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.026875901875901876,
+          "rank": 9
+        },
+        "openreview-icml-2026-yvgtyofyud": {
+          "score": 0.026830135039090264,
+          "rank": 10
+        },
+        "openreview-icml-2026-thy0g4phcr": {
+          "score": 0.026333907056798625,
+          "rank": 11
+        },
+        "openreview-icml-2026-vkmwujvv2c": {
+          "score": 0.025827404887101765,
+          "rank": 12
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.025603392041748205,
+          "rank": 13
+        },
+        "openreview-icml-2026-88h3v90wzo": {
+          "score": 0.025481764612199396,
+          "rank": 14
+        },
+        "openreview-icml-2026-tlw4tc7zn9": {
+          "score": 0.024877149877149878,
+          "rank": 15
+        },
+        "openreview-icml-2026-2rgr38p5az": {
+          "score": 0.024222968043192763,
+          "rank": 16
+        },
+        "openreview-icml-2026-v3dcfhec5c": {
+          "score": 0.024039829302987197,
+          "rank": 17
+        },
+        "openreview-icml-2026-mgu2fs7kjt": {
+          "score": 0.023676099747828524,
+          "rank": 18
+        },
+        "openreview-icml-2026-3mj9etu319": {
+          "score": 0.015151515151515152,
+          "rank": 25
+        },
+        "openreview-icml-2026-nly2poybrj": {
+          "score": 0.0136986301369863,
+          "rank": 28
+        },
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.013333333333333334,
+          "rank": 29
+        },
+        "openreview-icml-2026-hsdgkuov8n": {
+          "score": 0.013157894736842105,
+          "rank": 30
+        },
+        "openreview-icml-2026-we5wzlukf5": {
+          "score": 0.012345679012345678,
+          "rank": 36
+        },
+        "openreview-icml-2026-jwlsuhdydc": {
+          "score": 0.011494252873563218,
+          "rank": 43
+        },
+        "openreview-icml-2026-4w9dpowgcs": {
+          "score": 0.011111111111111112,
+          "rank": 46
+        },
+        "openreview-icml-2026-jo7mt1xbuq": {
+          "score": 0.011111111111111112,
+          "rank": 47
+        },
+        "openreview-icml-2026-s3pssbv7fz": {
+          "score": 0.010869565217391304,
+          "rank": 49
+        },
+        "openreview-icml-2026-wjcftjriqv": {
+          "score": 0.010309278350515464,
+          "rank": 58
+        },
+        "openreview-icml-2026-dsxn7vuwa3": {
+          "score": 0.00909090909090909,
+          "rank": 77
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "diffusion-rl",
+      "paper_tag": "keyword:diffusion-rl",
+      "query_text": "sample efficient reinforcement learning",
+      "sim_scores": {
+        "openreview-icml-2026-qgakuqzybc": {
+          "score": 0.028629032258064516,
+          "rank": 1
+        },
+        "openreview-icml-2026-ruheyl9bb9": {
+          "score": 0.02699859747545582,
+          "rank": 2
+        },
+        "openreview-icml-2026-edpv55htq6": {
+          "score": 0.025914384123339348,
+          "rank": 4
+        },
+        "openreview-icml-2026-yitfnjursw": {
+          "score": 0.01639344262295082,
+          "rank": 7
+        },
+        "openreview-icml-2026-5pqiaadn7e": {
+          "score": 0.015873015873015872,
+          "rank": 9
+        },
+        "openreview-icml-2026-agn2cgtciw": {
+          "score": 0.015625,
+          "rank": 11
+        },
+        "openreview-icml-2026-4qlptaboir": {
+          "score": 0.014705882352941176,
+          "rank": 17
+        },
+        "openreview-icml-2026-jo7mt1xbuq": {
+          "score": 0.014285714285714285,
+          "rank": 21
+        },
+        "openreview-icml-2026-l6vw6cvkhi": {
+          "score": 0.014084507042253521,
+          "rank": 23
+        },
+        "openreview-icml-2026-uzf4ssk12k": {
+          "score": 0.013888888888888888,
+          "rank": 25
+        },
+        "openreview-icml-2026-k3jeuey9ti": {
+          "score": 0.012048192771084338,
+          "rank": 47
+        },
+        "openreview-icml-2026-mk3xwe7p2t": {
+          "score": 0.010638297872340425,
+          "rank": 65
+        },
+        "openreview-icml-2026-g9uw8lfwep": {
+          "score": 0.010526315789473684,
+          "rank": 66
+        },
+        "openreview-icml-2026-tbz8ixrekd": {
+          "score": 0.010526315789473684,
+          "rank": 67
+        },
+        "openreview-icml-2026-vupee4yd1t": {
+          "score": 0.010416666666666666,
+          "rank": 68
+        },
+        "openreview-icml-2026-dsxn7vuwa3": {
+          "score": 0.01,
+          "rank": 74
+        },
+        "openreview-icml-2026-8atkbixm7u": {
+          "score": 0.009433962264150943,
+          "rank": 85
+        },
+        "openreview-icml-2026-mcvjybwmpt": {
+          "score": 0.009259259259259259,
+          "rank": 89
+        }
+      }
+    }
+  ],
+  "global_candidate_ids": [
+    "openreview-icml-2026-igtmjtehxq",
+    "openreview-icml-2026-k3jeuey9ti",
+    "openreview-icml-2026-4qlptaboir",
+    "openreview-icml-2026-thy0g4phcr",
+    "openreview-icml-2026-mk3xwe7p2t",
+    "openreview-icml-2026-hwfclpdj8d",
+    "openreview-icml-2026-qgakuqzybc",
+    "openreview-icml-2026-ruheyl9bb9",
+    "openreview-icml-2026-tbz8ixrekd",
+    "openreview-icml-2026-vupee4yd1t",
+    "openreview-icml-2026-mcvjybwmpt",
+    "openreview-icml-2026-axvtmnyelj",
+    "openreview-icml-2026-pbhnxll3ln",
+    "openreview-icml-2026-g9uw8lfwep",
+    "openreview-icml-2026-88h3v90wzo",
+    "openreview-icml-2026-bjodtiusvx",
+    "openreview-icml-2026-375mrn00z0",
+    "openreview-icml-2026-vkmwujvv2c",
+    "openreview-icml-2026-yvgtyofyud",
+    "openreview-icml-2026-rfifrfon5w",
+    "openreview-icml-2026-oiobtt157h",
+    "openreview-icml-2026-89akcieuyp",
+    "openreview-icml-2026-p2rprtppmo",
+    "openreview-icml-2026-zcnz6vs4yx",
+    "openreview-icml-2026-3mj9etu319",
+    "openreview-icml-2026-ity1m4n2fu",
+    "openreview-icml-2026-kibouvwmor",
+    "openreview-icml-2026-tsmzhxtjwz",
+    "openreview-icml-2026-jwlsuhdydc",
+    "openreview-icml-2026-v3dcfhec5c",
+    "openreview-icml-2026-yi9wsqfz7w",
+    "openreview-icml-2026-bqxqa5ndph",
+    "openreview-icml-2026-nly2poybrj",
+    "openreview-icml-2026-urlj8famrf",
+    "openreview-icml-2026-gnwwzeqpf0",
+    "openreview-icml-2026-2rgr38p5az",
+    "openreview-icml-2026-tlw4tc7zn9",
+    "openreview-icml-2026-eeou8iz7w1",
+    "openreview-icml-2026-khauobv0dj",
+    "openreview-icml-2026-nc5wynei17",
+    "openreview-icml-2026-f9ndkf5opy",
+    "openreview-icml-2026-dsxn7vuwa3",
+    "openreview-icml-2026-s3pssbv7fz",
+    "openreview-icml-2026-jhnmy6jhjw",
+    "openreview-icml-2026-ajmrn5qyih",
+    "openreview-icml-2026-mjycl7esqo",
+    "openreview-icml-2026-81blq07f5o",
+    "openreview-icml-2026-wjcftjriqv",
+    "openreview-icml-2026-edpv55htq6",
+    "openreview-icml-2026-mgu2fs7kjt",
+    "openreview-icml-2026-jo7mt1xbuq",
+    "openreview-icml-2026-l5zjv73k7x",
+    "openreview-icml-2026-fgdyd2blor",
+    "openreview-icml-2026-5zwnr6uslv",
+    "openreview-icml-2026-n4ssjvkxwq",
+    "openreview-icml-2026-eeulo2bjfn",
+    "openreview-icml-2026-bcrbqg8ffn",
+    "openreview-icml-2026-hocdjaeaim",
+    "openreview-icml-2026-gmihhrj6wp",
+    "openreview-icml-2026-hsdgkuov8n",
+    "openreview-icml-2026-7u1ezzcwqx",
+    "openreview-icml-2026-rez2wdnzbj",
+    "openreview-icml-2026-sp2bdu3tlw",
+    "openreview-icml-2026-v0qbwyewkr",
+    "openreview-icml-2026-q6kt8mroxg",
+    "openreview-icml-2026-h2wueh9mmy",
+    "openreview-icml-2026-ldcinvft8o",
+    "openreview-icml-2026-lvyueb4poi",
+    "openreview-icml-2026-lpqtiyphzn",
+    "openreview-icml-2026-09csjvedug",
+    "openreview-icml-2026-ddngzqfye3",
+    "openreview-icml-2026-uuh2sk0mh0",
+    "openreview-icml-2026-hkzmnbx5b2",
+    "openreview-icml-2026-2sux04akod",
+    "openreview-icml-2026-owdqigcvmq",
+    "openreview-icml-2026-91bmgklyeq",
+    "openreview-icml-2026-we5wzlukf5",
+    "openreview-icml-2026-pfarhkqg8e",
+    "openreview-icml-2026-svyjxhzlde",
+    "openreview-icml-2026-uzf4ssk12k",
+    "openreview-icml-2026-4w9dpowgcs",
+    "openreview-icml-2026-9qbzrmiw63",
+    "openreview-icml-2026-nc1a9gsm3s",
+    "openreview-icml-2026-5bxmlmjt43",
+    "openreview-icml-2026-euv8iokfbh",
+    "openreview-icml-2026-1asu8u2tmc",
+    "openreview-icml-2026-tjurooo1ob",
+    "openreview-icml-2026-4p9cecinyp",
+    "openreview-icml-2026-8atkbixm7u",
+    "openreview-icml-2026-a5itzi3deq",
+    "openreview-icml-2026-jwraiyovjn",
+    "openreview-icml-2026-zk0qjcqjv9",
+    "openreview-icml-2026-z7wi0sor6i",
+    "openreview-icml-2026-yitfnjursw",
+    "openreview-icml-2026-ynphj2a2ov",
+    "openreview-icml-2026-5pqiaadn7e",
+    "openreview-icml-2026-agn2cgtciw",
+    "openreview-icml-2026-n05ha5nveu",
+    "openreview-icml-2026-wx5xhjoeyn",
+    "openreview-icml-2026-wemye1b16x",
+    "openreview-icml-2026-l6vw6cvkhi",
+    "openreview-icml-2026-4x1xzwfze3",
+    "openreview-icml-2026-qtzu9pgh7s",
+    "openreview-icml-2026-j0pagzwefo",
+    "openreview-icml-2026-xyumlowivd",
+    "openreview-icml-2026-2opeltejao",
+    "openreview-icml-2026-s7wv3xgqfl",
+    "openreview-icml-2026-xf6klfhho8",
+    "openreview-icml-2026-vqxclpkdrp",
+    "openreview-icml-2026-4oefd3fg5e",
+    "openreview-icml-2026-4ofxgdurnh",
+    "openreview-icml-2026-htsjpoimmc",
+    "openreview-icml-2026-zo8vzsggtn",
+    "openreview-icml-2026-yojuz84nlb",
+    "openreview-icml-2026-niljxffxwm",
+    "openreview-icml-2026-lwb2eacvt6",
+    "openreview-icml-2026-y6lgscnnoz",
+    "openreview-icml-2026-q5dhzfvoxf",
+    "openreview-icml-2026-gd2s0bjqnz",
+    "openreview-icml-2026-az6toqyagm"
+  ],
+  "global_pool_lane_top_k": 30,
+  "global_pool_limit": 120,
+  "global_pool_guaranteed_per_lane": 2,
+  "global_pool_effective_size": 120,
+  "reranked_at": "2026-07-11T06:36:45.478017+00:00",
+  "llm_ranked": [
+    {
+      "paper_id": "openreview-icml-2026-4qlptaboir",
+      "score": 10.0,
+      "evidence_en": "sample-efficient diffusion-based RL with critic guidance",
+      "evidence_cn": "基于评论家引导的样本高效扩散强化学习",
+      "canonical_evidence": "基于评论家引导的样本高效扩散强化学习",
+      "tldr_en": "Proposes CGPO, a critic-guided diffusion policy optimization that balances exploration and exploitation for sample-efficient RL.",
+      "tldr_cn": "该文针对扩散策略强化学习中采样型方法探索好但利用不足、梯度型方法利用好但坍缩为单峰的问题，提出评论家引导的扩散策略优化（CGPO）。该框架同时结合采样和梯度优势，实现高效探索与价值利用。在多个机器人控制任务上，CGPO显著提升了样本效率和最终性能。",
+      "title_zh": "基于评论家引导的样本高效扩散强化学习",
+      "motivation_cn": "现有扩散强化学习方法在探索-利用平衡上存在缺陷，导致收敛慢或多样性丢失。",
+      "method_cn": "提出评论家引导的扩散策略优化，融合采样和梯度信号进行策略更新。",
+      "result_cn": "在多个MuJoCo和机器人任务上，CGPO在样本效率和收敛性能上均超越基线。",
+      "conclusion_cn": "评论家引导有效平衡了扩散策略的探索与利用，实现样本高效的强化学习。",
+      "matched_requirement_id": "req-5",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "How to improve sample efficiency in diffusion based reinforcement learning?"
+    },
+    {
+      "paper_id": "openreview-icml-2026-dsxn7vuwa3",
+      "score": 9.0,
+      "evidence_en": "sample-efficient finetuning of diffusion policies via distribution contraction RL",
+      "evidence_cn": "通过分布收缩RL对扩散策略进行样本高效微调",
+      "canonical_evidence": "通过分布收缩RL对扩散策略进行样本高效微调",
+      "tldr_en": "DICE-RL uses distribution contraction to finetune pretrained diffusion policies via sample-efficient residual off-policy RL, achieving high performance and stability.",
+      "tldr_cn": "现有扩散策略微调方法样本效率不足，DICE-RL将强化学习视为分布收缩算子，通过残差离线策略RL结合选择性行为正则化和价值引导动作选择，对预训练的扩散或流策略进行样本高效微调。实验证明该方法在稳定性和样本效率上均显著提升，能够实现复杂技能的掌握。",
+      "title_zh": "从先验到专家：通过分布收缩强化学习微调实现高效技能掌握",
+      "motivation_cn": "针对预训练扩散策略微调时样本效率低的问题，提出分布收缩方法。",
+      "method_cn": "提出DICE-RL框架，将RL作为分布收缩算子，结合选择性行为正则化与价值引导动作选择进行残差离线策略微调。",
+      "result_cn": "实验表明DICE-RL在多个任务上性能提升显著，且训练稳定、样本高效。",
+      "conclusion_cn": "DICE-RL为基于扩散的策略微调提供了稳定且样本高效的解决方案。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-g9uw8lfwep",
+      "score": 9.0,
+      "evidence_en": "efficient diffusion framework for offline-to-online RL with uncertainty awareness",
+      "evidence_cn": "高效的不确定性感知扩散框架用于离线到在线强化学习",
+      "canonical_evidence": "高效的不确定性感知扩散框架用于离线到在线强化学习",
+      "tldr_en": "DUAL proposes an efficient diffusion uncertainty-aware framework for O2O-RL, distilling fast-sampling diffusion actor and transition model to mitigate distribution shift.",
+      "tldr_cn": "离线到在线强化学习面临分布偏移问题。DUAL框架在离线阶段利用扩散模型先验知识蒸馏出快速采样的扩散演员策略和转移模型，并采用拉普拉斯近似和距离度量处理不确定性。在线阶段有效缓解分布偏移，实现了样本高效的微调。",
+      "title_zh": "高效且不确定性感知的扩散框架用于离线到在线强化学习",
+      "motivation_cn": "离线到在线RL中分布偏移影响样本效率。",
+      "method_cn": "提出DUAL框架，蒸馏快速扩散演员和转移模型，并结合不确定性度量。",
+      "result_cn": "在连续控制任务中显著提升了样本效率和最终性能。",
+      "conclusion_cn": "DUAL为O2O-RL提供了高效且鲁棒的扩散基解决方案。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-uzf4ssk12k",
+      "score": 9.0,
+      "evidence_en": "diffusion filtered exploration for sample efficient finetuning",
+      "evidence_cn": "扩散滤波探索用于样本高效微调",
+      "canonical_evidence": "扩散滤波探索用于样本高效微调",
+      "tldr_en": "DF-ExpEnse uses diffusion-based generative policies to create candidate action sets and ensemble critics for exploration, improving finetuning sample-efficiency.",
+      "tldr_cn": "机器人决策中初始预训练生成策略的在线微调面临样本效率挑战。DF-ExpEnse利用生成控制策略的多模态建模能力构建可评估候选集，再通过集成评论家选择平衡质量和探索兴趣的动作。在集群场景中进一步支持跨智能体通信协作探索，显著提升了微调样本效率。",
+      "title_zh": "DF-ExpEnse：用于样本高效微调的扩散滤波探索",
+      "motivation_cn": "预训练策略在线微调时样本效率亟待提升。",
+      "method_cn": "提出DF-ExpEnse，利用扩散策略生成候选动作集，集成评论家选择最优探索动作。",
+      "result_cn": "在机器人操作任务中微调样本效率大幅提升。",
+      "conclusion_cn": "DF-ExpEnse为基于扩散的智能微调提供了高效的探索机制。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-tbz8ixrekd",
+      "score": 9.0,
+      "evidence_en": "uses discrete diffusion models as policies in RL",
+      "evidence_cn": "在强化学习中使用离散扩散模型作为策略",
+      "canonical_evidence": "在强化学习中使用离散扩散模型作为策略",
+      "tldr_en": "Introduces a framework to train discrete diffusion models as policies for combinatorial action spaces in RL, achieving state-of-the-art performance.",
+      "tldr_cn": "该文针对强化学习在大型组合动作空间中的扩展难题，提出用离散扩散模型作为策略。通过策略镜像下降定义理想目标分布，将策略更新视为分布匹配问题，训练扩散模型复制稳定目标。在多个组合动作基准上取得了最先进的结果。",
+      "title_zh": "面向组合动作空间的离散扩散策略强化学习",
+      "motivation_cn": "强化学习难以扩展到大型组合动作空间，需要表达能力强的策略模型。",
+      "method_cn": "利用策略镜像下降定义正则化目标分布，通过分布匹配训练离散扩散模型作为策略。",
+      "result_cn": "在多种组合动作空间任务中，该方法显著优于现有强化学习基线。",
+      "conclusion_cn": "离散扩散模型作为策略在组合动作空间强化学习中具有巨大潜力。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion policy reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-vupee4yd1t",
+      "score": 9.0,
+      "evidence_en": "unified framework for online RL with diffusion and flow policies",
+      "evidence_cn": "将扩散和流策略统一到在线强化学习的框架",
+      "canonical_evidence": "将扩散和流策略统一到在线强化学习的框架",
+      "tldr_en": "Proposes Reverse Flow Matching, a unified framework for online RL with diffusion and flow policies, clarifying relationships between noise-expectation and gradient-expectation families.",
+      "tldr_cn": "该文针对扩散和流策略在在线强化学习中训练效率低的问题，提出逆流匹配统一框架。该框架揭示了噪声期望族和梯度期望族之间的正式关系，并提供了一种新的训练目标。实验在多个控制任务上验证了其有效性和样本效率。",
+      "title_zh": "逆流匹配：面向扩散和流策略的在线强化学习统一框架",
+      "motivation_cn": "扩散和流策略在在线强化学中训练困难，且不同训练目标间关系不明确。",
+      "method_cn": "提出逆流匹配框架，统一噪声期望和梯度期望两种策略更新方式。",
+      "result_cn": "在连续控制任务上，该方法提升了训练稳定性和样本效率，接近或超过最先进水平。",
+      "conclusion_cn": "逆流匹配为扩散策略在线强化学习提供了理论统一和实用训练方法。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-hwfclpdj8d",
+      "score": 9.0,
+      "evidence_en": "diffusion policies in offline RL with noisy-space policy gradient",
+      "evidence_cn": "离线强化学习中扩散策略的噪声空间策略梯度",
+      "canonical_evidence": "离线强化学习中扩散策略的噪声空间策略梯度",
+      "tldr_en": "Introduces noisy-space Q-function and policy gradient for diffusion policies in offline RL, enabling effective integration with RL.",
+      "tldr_cn": "该文针对扩散策略与强化学习集成困难的问题，引入噪声空间动作价值函数和噪声空间策略梯度（NSPG）。通过将值函数赋予扩散潜在变量，推导出仅使用干净动作空间值估计的策略梯度。在离线RL基准上，该方法取得了竞争性结果。",
+      "title_zh": "离线强化学习中扩散策略的噪声空间策略梯度",
+      "motivation_cn": "扩散策略与强化学习的结合在概念和算法上具有挑战性。",
+      "method_cn": "定义噪声空间Q函数并推导噪声空间策略梯度，实现扩散策略的KL正则化策略改进。",
+      "result_cn": "在D4RL离线数据集上，NSPG方法在多个任务上达到或超越现有扩散策略方法。",
+      "conclusion_cn": "噪声空间视角为扩散策略在离线强化学习中的应用提供了有效框架。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-4w9dpowgcs",
+      "score": 9.0,
+      "evidence_en": "improving sample efficiency of diffusion models with RL and non-differentiable rewards",
+      "evidence_cn": "使用强化学习和非可微分奖励提升扩散模型的样本效率",
+      "canonical_evidence": "使用强化学习和非可微分奖励提升扩散模型的样本效率",
+      "tldr_en": "Presents TDM-R1, an RL paradigm for few-step diffusion models that handles non-differentiable rewards, improving sample efficiency.",
+      "tldr_cn": "针对少量步扩散模型无法处理非可微分奖励（如人工偏好、物体计数）的问题，本文提出TDM-R1强化学习范式。该范式基于轨迹分布匹配（TDM）构建，通过解耦学习过程，使得模型能够从非可微分奖励信号中有效学习。实验表明，TDM-R1在图像生成质量与奖励优化之间取得了更好权衡，显著提升了样本效率，拓展了扩散模型在现实场景中的应用范围。",
+      "title_zh": "TDM-R1：利用非可微分奖励强化少量步扩散模型",
+      "motivation_cn": "现有RL方法依赖可微分奖励模型，无法利用广泛存在的非可微分奖励信号，限制了少步扩散模型的实际应用。",
+      "method_cn": "基于轨迹分布匹配（TDM）构建TDM-R1，解耦学习过程以兼容非可微分奖励。",
+      "result_cn": "在包含人工偏好等非可微分奖励的任务上，TDM-R1在生成质量和奖励优化方面均优于现有方法。",
+      "conclusion_cn": "TDM-R1成功将非可微分奖励纳入扩散模型RL微调，是提升样本效率和实用性的关键技术。",
+      "matched_requirement_id": "req-5",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "How to improve sample efficiency in diffusion based reinforcement learning?"
+    },
+    {
+      "paper_id": "openreview-icml-2026-jwlsuhdydc",
+      "score": 9.0,
+      "evidence_en": "temporal difference learning for diffusion models, casting denoising as RL policy evaluation",
+      "evidence_cn": "将扩散模型的去噪过程视为强化学习策略评估，提出时序差分学习目标",
+      "canonical_evidence": "将扩散模型的去噪过程视为强化学习策略评估，提出时序差分学习目标",
+      "tldr_en": "Proposes a TD objective for diffusion models that enforces cross-time consistency, improving few-step sampling performance.",
+      "tldr_cn": "本文揭示扩散模型传统训练目标缺乏跨时间步一致性，导致少步采样性能不佳。通过将扩散过程重新表述为马尔可夫奖励过程，并将去噪视为强化学习中的策略评估问题，提出了统一的时序差分（TD）目标。该目标惩罚沿去噪路径的多步不一致性，并引入了基于样本的重新加权方法。在多个图像生成数据集上，TD训练显著提升少步采样的质量和效率。",
+      "title_zh": "扩散模型的时序差分学习",
+      "motivation_cn": "扩散模型的局部去噪训练目标不保证跨时间步一致性，损害少步采样器的性能。",
+      "method_cn": "将扩散过程建模为马尔可夫奖励过程，推导出统一的TD目标惩罚多步不一致。",
+      "result_cn": "在多个图像生成任务上，TD训练使少步采样质量大幅提升，接近多步水平。",
+      "conclusion_cn": "TD学习为扩散模型提供了有效的时间一致性约束，是提升效率和质量的通用方法。",
+      "matched_requirement_id": "req-4",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "reinforcement learning diffusion"
+    },
+    {
+      "paper_id": "openreview-icml-2026-mgu2fs7kjt",
+      "score": 9.0,
+      "evidence_en": "trust-region diffusion policies for massively parallel on-policy RL",
+      "evidence_cn": "用于大规模并行在线策略强化学习的置信域扩散策略",
+      "canonical_evidence": "用于大规模并行在线策略强化学习的置信域扩散策略",
+      "tldr_en": "Proposes Trust-region Diffusion Policies (TruDi) enabling stable on-policy RL with diffusion models in massively parallel settings.",
+      "tldr_cn": "当前在线策略RL主要使用高斯策略，但扩散模型表达力更强。本文提出TruDi，将扩散策略引入大规模并行在线策略RL。通过结合置信域优化，TruDi克服了扩散模型在线训练中的高方差和退化问题。在多个连续控制和机器人任务上，TruDi显著优于高斯策略，验证了扩散策略在在线RL中的潜力。",
+      "title_zh": "大规模并行在线策略强化学习的置信域扩散策略",
+      "motivation_cn": "现有在线策略RL主要依赖简单高斯策略，扩散模型的强大表达力尚未在在线场景中得到有效应用。",
+      "method_cn": "提出TruDi，将扩散模型作为策略类，引入置信域约束以稳定在线策略更新。",
+      "result_cn": "在多个连续控制任务上，TruDi的最终回报和样本效率均大幅超越高斯策略基线。",
+      "conclusion_cn": "TruDi成功将扩散策略应用于在线RL，为复杂控制任务提供了更强大的策略表达。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion policy reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-2rgr38p5az",
+      "score": 9.0,
+      "evidence_en": "bootstrapped flow Q-learning for fast offline RL with diffusion-based policies",
+      "evidence_cn": "基于自举流Q学习的快速离线强化学习，使用扩散式策略",
+      "canonical_evidence": "基于自举流Q学习的快速离线强化学习，使用扩散式策略",
+      "tldr_en": "Proposes Bootstrapped Flow Q-Learning (BFQ) for single-step action generation in offline RL, eliminating multi-step denoising overhead.",
+      "tldr_cn": "现有扩散Q学习依赖多步去噪，计算昂贵且脆弱。本文提出BFQ，采用“分而治之”方法将去噪过程压缩为单步，无需辅助网络或蒸馏。BFQ在离线RL基准上达到或超越多步方法的性能，同时推理速度提升数十倍，为扩散策略的实用化铺平道路。",
+      "title_zh": "基于自举流Q学习的快速高表达力离线策略学习",
+      "motivation_cn": "扩散Q学习的多步去噪导致训练和推理缓慢，现有加速方法牺牲了简洁性或性能。",
+      "method_cn": "设计自举流Q学习（BFQ），通过分治策略实现单步动作生成，无需额外网络或蒸馏。",
+      "result_cn": "在D4RL等离线RL基准上，BFQ性能与多步方法相当，但推理速度快一个数量级。",
+      "conclusion_cn": "BFQ验证了单步扩散策略在离线RL中的可行性，兼顾效率与性能。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion policy reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-vkmwujvv2c",
+      "score": 9.0,
+      "evidence_en": "DMSampler reduces rollout cost by order-of-magnitude using a few-step distilled sampler",
+      "evidence_cn": "DMSampler通过少量步的蒸馏采样器将扩展成本降低一个数量级",
+      "canonical_evidence": "DMSampler通过少量步的蒸馏采样器将扩展成本降低一个数量级",
+      "tldr_en": "DMSampler accelerates online diffusion RL by replacing expensive 50-step rollouts with co-evolving few-step distilled sampler, achieving 4-8 step sampling and order-of-magnitude reduction in rollout cost.",
+      "tldr_cn": "该论文提出DMSampler框架，通过共演化的少量步蒸馏采样器替代昂贵的50步策略展开，仅需4-8步即可生成奖励评估样本，并将展开成本降低一个数量级。框架在RL阶段和蒸馏阶段之间交替，蒸馏采样器作为策略的快速代理。实验表明该方法显著提升了在线扩散RL的样本效率，同时保持策略性能。",
+      "title_zh": "蒸馏模型作为扩散强化学习的高效采样器",
+      "motivation_cn": "在线扩散RL的策略展开需要大量去噪步骤，导致计算开销极大，限制了样本效率。",
+      "method_cn": "DMSampler采用RL阶段和蒸馏阶段交替：RL阶段使用旧策略和蒸馏采样器的混合样本优化策略，蒸馏阶段将蒸馏采样器重新对齐到改进的策略。",
+      "result_cn": "在D4RL等基准上，DMSampler将采样步骤从50减少到4-8，同时保持或提升了奖励和策略性能。",
+      "conclusion_cn": "蒸馏采样器作为快速代理有效降低了扩散RL的训练成本，显著提升了样本效率。",
+      "matched_requirement_id": "req-5",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "How to improve sample efficiency in diffusion based reinforcement learning?"
+    },
+    {
+      "paper_id": "openreview-icml-2026-hsdgkuov8n",
+      "score": 8.0,
+      "evidence_en": "improves sample efficiency of diffusion-based RL via latent perturbation",
+      "evidence_cn": "通过潜在扰动提高扩散强化学习的样本效率",
+      "canonical_evidence": "通过潜在扰动提高扩散强化学习的样本效率",
+      "tldr_en": "Proposes Lagrangian Perturbation Diffusion Steering (LP-DS) to improve a frozen generative policy by learning a compact noise-space perturbation, achieving sample-efficient fine-tuning in RL.",
+      "tldr_cn": "该文针对行为克隆中生成策略的样本效率低和分布偏移问题，提出拉格朗日扰动扩散引导（LP-DS）方法。通过学习紧凑的噪声空间扰动，在保持潜在先验的同时优化下游价值，实现样本高效的强化学习微调。在多种连续控制任务上验证了其有效性。",
+      "title_zh": "拉格朗日扰动扩散引导：用于生成策略的潜在强化学习",
+      "motivation_cn": "直接更新大规模动作解码器在强化学习微调中不稳定且样本效率低，需要轻量级适应方法。",
+      "method_cn": "在冻结的生成策略前学习一个紧凑的噪声空间扰动，并用拉格朗日信赖域目标优化。",
+      "result_cn": "在RoboMimic、OpenAI Gym等基准上，LP-DS显著提升了样本效率和最终性能。",
+      "conclusion_cn": "LP-DS是一种轻量级、样本高效的扩散策略强化学习方法，可推广到多种生成策略。",
+      "matched_requirement_id": "req-5",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "How to improve sample efficiency in diffusion based reinforcement learning?"
+    },
+    {
+      "paper_id": "openreview-icml-2026-jo7mt1xbuq",
+      "score": 8.0,
+      "evidence_en": "sample efficient multi-task reinforcement learning",
+      "evidence_cn": "样本高效的多任务强化学习",
+      "canonical_evidence": "样本高效的多任务强化学习",
+      "tldr_en": "Proposes HyMTRL, a hybrid multi-task RL framework that uses phased policy evolution to improve sample efficiency by transitioning tasks from RL to imitation learning.",
+      "tldr_cn": "该文针对多任务强化学习因任务难度差异导致的异步收敛和样本效率问题，提出混合多任务强化学习框架（HyMTRL）。通过分阶段策略演化，将掌握的任务从强化学习转为模仿学习，减轻评论家网络负担。实验表明该方法显著提升了样本效率和任务性能。",
+      "title_zh": "HyMTRL：通过分阶段策略演化的混合多任务强化学习框架",
+      "motivation_cn": "多任务强化学习中共享评论家网络因任务难度差异而过载，导致样本效率低下。",
+      "method_cn": "提出分阶段策略演化，先进行强化探索，再将掌握的任务转为模仿学习。",
+      "result_cn": "在多个多任务基准上，HyMTRL比基线方法更高效地收敛并取得更高回报。",
+      "conclusion_cn": "分阶段学习能有效缓解评论家过载，提升多任务强化学习的样本效率。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-ruheyl9bb9",
+      "score": 8.0,
+      "evidence_en": "sample efficient reinforcement learning with verifiable rewards",
+      "evidence_cn": "基于可验证奖励的样本高效强化学习",
+      "canonical_evidence": "基于可验证奖励的样本高效强化学习",
+      "tldr_en": "Proposes discounted Beta-Bernoulli reward estimation to improve sample efficiency in RLVR by reducing estimation variance.",
+      "tldr_cn": "该论文针对强化学习与可验证奖励（RLVR）中存在的样本效率低下问题，提出了一种折扣Beta-Bernoulli奖励估计方法。通过将奖励建模为从策略诱导分布中采样的样本，并利用折扣Beta-Bernoulli分布进行贝叶斯估计，有效降低了基于少量rollout的奖励估计方差。实验表明，该方法在多种任务上显著提升了样本效率，为后训练阶段的大语言模型推理能力增强提供了更高效的解决方案。",
+      "title_zh": "基于折扣Beta-Bernoulli奖励估计的样本高效强化学习方法",
+      "motivation_cn": "现有群体化RLVR方法因奖励点估计导致高方差和样本利用率低，严重制约了样本效率。",
+      "method_cn": "采用折扣Beta-Bernoulli分布建模奖励分布，将优势计算转化为对有限数据下奖励分布的贝叶斯估计问题。",
+      "result_cn": "在多个推理任务上，所提方法显著降低了奖励估计方差，提升了样本效率和最终性能。",
+      "conclusion_cn": "折扣贝叶斯奖励估计是提升RLVR样本效率的有效途径，可推广至更多后训练场景。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-mcvjybwmpt",
+      "score": 8.0,
+      "evidence_en": "gradient-space evolution strategies for efficient diffusion alignment using RL",
+      "evidence_cn": "使用梯度空间进化策略实现高效的扩散对齐",
+      "canonical_evidence": "使用梯度空间进化策略实现高效的扩散对齐",
+      "tldr_en": "Proposes GS-ES, bridging evolution strategies and RL for stable and efficient diffusion model alignment.",
+      "tldr_cn": "针对扩散模型对齐中RL方法效率低和训练不稳定的问题，本文提出梯度空间进化策略（GS-ES）。通过建立动作空间采样与梯度空间进化之间的对偶性，GS-ES直接从扩散噪声估计稳定更新方向，避免了策略梯度的高方差和参考模型的开销。实验证明，GS-ES在多个奖励函数下实现了更快的收敛和更高的最终奖励，为扩散模型的高效对齐提供了新范式。",
+      "title_zh": "面向高效扩散对齐的梯度空间进化策略",
+      "motivation_cn": "现有RL对齐方法方差高且需要维护参考模型，导致训练效率低下且不稳定。",
+      "method_cn": "建立结构化动作空间采样与梯度空间进化的对偶性，直接从扩散噪声估计更新方向。",
+      "result_cn": "在多个奖励任务上，GS-ES收敛更快且最终奖励更高，训练更稳定。",
+      "conclusion_cn": "GS-ES结合进化策略的稳定性和RL的目标导向，为扩散模型对齐带来高效解决方案。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-thy0g4phcr",
+      "score": 8.0,
+      "evidence_en": "online multi-agent diffusion policies for efficient coordination",
+      "evidence_cn": "用于高效协同的在线多智能体扩散策略",
+      "canonical_evidence": "用于高效协同的在线多智能体扩散策略",
+      "tldr_en": "Introduces OMAD, the first online off-policy MARL framework with diffusion policies, enabling effective exploration and coordination.",
+      "tldr_cn": "多智能体强化学习（MARL）中策略表达力对协同至关重要，但扩散模型在在线MARL中因似然不可解而难以探索。本文提出OMAD，首个在线离策略MARL框架，通过重参数化技巧和熵约束使扩散策略可训练。在多个协同任务上，OMAD优于高斯策略和现有MARL方法，证明了扩散策略在在线多智能体场景中的有效性。",
+      "title_zh": "扩散协同：高效在线多智能体扩散策略",
+      "motivation_cn": "扩散模型的表达力在在线MARL中未被利用，因为似然不可解阻碍了基于熵的探索。",
+      "method_cn": "提出OMAD框架，利用重参数化技巧和熵约束训练扩散策略，实现在线离策略MARL。",
+      "result_cn": "在多种多智能体协同任务上，OMAD的协同效率和最终回报均超越基线方法。",
+      "conclusion_cn": "OMAD首次将扩散策略成功应用于在线MARL，为多智能体系统提供更强大的策略表达范式。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion policy reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-k3jeuey9ti",
+      "score": 8.0,
+      "evidence_en": "proposes diffusion-based variants of PPO, WPO, REPPO for maximum entropy RL",
+      "evidence_cn": "提出了最大熵强化学习的扩散变体算法",
+      "canonical_evidence": "提出了最大熵强化学习的扩散变体算法",
+      "tldr_en": "Reinterprets maximum entropy RL as diffusion sampling, deriving diffusion-based PPO, WPO, and REPPO variants via an augmented MDP and diffusion-aware Q-function.",
+      "tldr_cn": "该论文将最大熵强化学习重新解释为扩散采样问题，通过一个可处理的上界最小化扩散策略与最优策略分布之间的反向KL散度。利用策略梯度定理，推导出包含扩散动力学的修改代理目标，从而得到DME-PPO、DME-WPO和DME-REPPO等扩散基变体。实验结果表明这些算法在连续控制任务上具有竞争力。",
+      "title_zh": "基于扩散的最大熵强化学习算法框架",
+      "motivation_cn": "扩散模型在复杂分布采样上表现优异，但如何将其与最大熵RL结合仍缺乏统一框架。",
+      "method_cn": "将ME-RL视为扩散采样问题，最小化扩散策略与最优策略的KL散度，通过增广MDP和扩散感知Q函数推导出扩散基PPO等算法。",
+      "result_cn": "在MuJoCo等连续控制基准上，所提算法与原始版本相比性能相当或更优。",
+      "conclusion_cn": "提出了一个统一的扩散基最大熵RL框架，展示了扩散模型在策略优化中的有效性。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-mk3xwe7p2t",
+      "score": 7.0,
+      "evidence_en": "diffusion-based safe RL with Lagrangian-guided denoising",
+      "evidence_cn": "基于扩散的安全强化学习，引入拉格朗日引导去噪",
+      "canonical_evidence": "基于扩散的安全强化学习，引入拉格朗日引导去噪",
+      "tldr_en": "ALGD proposes Augmented Lagrangian-Guided Diffusion for off-policy safe RL, addressing stability issues in primal-dual methods via energy-based interpretation.",
+      "tldr_cn": "现有扩散RL方法主要关注离线奖励最大化，缺乏在线安全考虑。ALGD算法通过重新审视优化理论和能量建模，提出增广拉格朗日引导的扩散方法，将拉格朗日函数解释为能量函数指导去噪动力学，实现了稳定的离线策略安全RL。实验证实了其有效性。",
+      "title_zh": "拉格朗日如何通过扩散模型引导安全强化学习？",
+      "motivation_cn": "现有扩散RL方法缺乏对在线安全性的考虑。",
+      "method_cn": "提出ALGD算法，利用增广拉格朗日函数引导扩散去噪过程，实现离策略安全RL。",
+      "result_cn": "在安全RL基准上验证了算法的稳定性和有效性。",
+      "conclusion_cn": "ALGD为扩散模型在安全强化学习中的应用提供了理论指导和实用方法。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-nly2poybrj",
+      "score": 7.0,
+      "evidence_en": "aligning RL with pretraining objectives in diffusion models via advantage weighted matching",
+      "evidence_cn": "通过优势加权匹配对齐扩散模型中的强化学习与预训练目标",
+      "canonical_evidence": "通过优势加权匹配对齐扩散模型中的强化学习与预训练目标",
+      "tldr_en": "AWM introduces Advantage Weighted Matching, a policy-gradient method that aligns RL objectives with diffusion pretraining (score/flow matching) for improved convergence.",
+      "tldr_cn": "现有扩散模型RL方法（如DDPO）优化目标与预训练分数/流匹配损失不一致，导致方差大、收敛慢。本文理论分析表明DDPO是隐式噪声目标匹配，并提出优势加权匹配（AWM），利用分数/流匹配损失作为策略梯度方法，实现了与预训练的对齐，加速收敛并提升性能。",
+      "title_zh": "优势加权匹配：将强化学习与扩散模型预训练对齐",
+      "motivation_cn": "扩散模型RL优化目标与预训练目标不一致导致训练不稳定。",
+      "method_cn": "提出AWM方法，将分数/流匹配损失作为策略梯度目标，实现RL与预训练的对齐。",
+      "result_cn": "理论分析和实验表明AWM降低了方差，加快了收敛。",
+      "conclusion_cn": "AWM为扩散模型的强化学习微调提供了更稳定高效的范式。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-tlw4tc7zn9",
+      "score": 7.0,
+      "evidence_en": "improving diffusion planners for offline RL via self-supervised action gating",
+      "evidence_cn": "通过自监督动作门控改进离线RL中的扩散规划器",
+      "canonical_evidence": "通过自监督动作门控改进离线RL中的扩散规划器",
+      "tldr_en": "SAGE improves diffusion planners for offline RL by re-ranking trajectories using a self-supervised consistency signal, enhancing robustness and sample efficiency.",
+      "tldr_cn": "扩散规划器在离线RL中可能选择与环境动态不一致的轨迹，导致执行脆弱。SAGE方法训练联合嵌入预测架构编码器和动作条件预测器，在推理时根据潜在预测误差计算能量，结合价值估计进行重排序，惩罚动态不一致的规划，从而提升扩散规划器的鲁棒性和样本效率。",
+      "title_zh": "通过自监督动作门控与能量改进扩散规划器",
+      "motivation_cn": "扩散规划器可能选择局部不一致的轨迹，导致性能脆弱。",
+      "method_cn": "提出SAGE，利用自监督潜在一致性信号进行推理时重排序。",
+      "result_cn": "在离线RL基准上提升了规划质量和执行鲁棒性。",
+      "conclusion_cn": "SAGE为扩散规划器提供了一种轻量级的加固方法。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-3mj9etu319",
+      "score": 7.0,
+      "evidence_en": "systematic analysis of RL design space for diffusion models",
+      "evidence_cn": "扩散模型强化学习设计空间的系统分析",
+      "canonical_evidence": "扩散模型强化学习设计空间的系统分析",
+      "tldr_en": "This paper systematically analyzes policy-gradient objectives, likelihood estimation, and algorithm design for RL on diffusion models, highlighting the importance of likelihood estimation.",
+      "tldr_cn": "强化学习在扩散模型中的应用面临不可计算似然的挑战。本文通过解耦策略梯度目标、似然估计和算法设计三个因素，系统分析了RL设计空间，揭示了似然估计对整体性能的关键影响，为扩散模型RL方法的设计提供了指导。",
+      "title_zh": "重新思考扩散模型强化学习的设计空间：似然估计在损失设计之外的重要性",
+      "motivation_cn": "扩散模型RL中似然估计方法缺乏系统研究。",
+      "method_cn": "系统分析了策略梯度目标、似然估计和算法设计三个因素的影响。",
+      "result_cn": "发现似然估计是影响性能的关键因素。",
+      "conclusion_cn": "为扩散模型的RL应用提供了设计指南。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-qgakuqzybc",
+      "score": 7.0,
+      "evidence_en": "data-efficient unsupervised reinforcement learning",
+      "evidence_cn": "数据高效的无监督强化学习",
+      "canonical_evidence": "数据高效的无监督强化学习",
+      "tldr_en": "Proposes GenDa, a data-efficient unsupervised RL framework with skill relabeling and Complementary Information Bottleneck to improve sample efficiency and generalization.",
+      "tldr_cn": "该文针对无监督强化学习中技能语义非平稳和泛化脆弱的问题，提出GenDa框架。通过技能重标注机制提升预训练样本效率，并利用互补信息瓶颈增强技能策略的泛化能力。实验表明GenDa在下游任务上实现了更高的样本效率和泛化性能。",
+      "title_zh": "学习可泛化技能策略的数据高效无监督强化学习",
+      "motivation_cn": "现有无监督强化学习方法样本效率低且泛化性差，受限于技能语义非平稳和脆弱泛化。",
+      "method_cn": "提出技能重标注缓解非平稳性，并引入互补信息瓶颈增强泛化。",
+      "result_cn": "在多个控制任务上，GenDa在预训练样本效率和下游任务性能上均优于基线。",
+      "conclusion_cn": "GenDa框架有效解决了无监督强化学习的样本效率和泛化瓶颈。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-5pqiaadn7e",
+      "score": 7.0,
+      "evidence_en": "sample efficient visual reinforcement learning",
+      "evidence_cn": "样本高效的视觉强化学习",
+      "canonical_evidence": "样本高效的视觉强化学习",
+      "tldr_en": "Proposes Return-Critic, an auxiliary framework for efficient visual RL that predicts episode returns from partial frames to improve representation learning.",
+      "tldr_cn": "该文针对像素级视觉强化学习中样本效率低的问题，提出Return-Critic辅助框架。它采样局部帧并通过轻量Transformer预测回合回报，对齐表示学习与强化学习目标。在多个视觉控制基准上，该方法显著提升了样本效率和最终性能。",
+      "title_zh": "Return-Critic：桥接目标差异以实现高效视觉强化学习",
+      "motivation_cn": "现有视觉强化学习的辅助任务目标与最大化回报存在偏差，限制了表示学习质量。",
+      "method_cn": "提出Return-Critic，通过部分帧预测回合回报来对齐表示与强化学习目标。",
+      "result_cn": "在DMControl和Atari等任务上，Return-Critic显著提高了样本效率和最终得分。",
+      "conclusion_cn": "回报预测能有效桥接表示学习与强化学习目标，提升视觉强化学习样本效率。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-yitfnjursw",
+      "score": 7.0,
+      "evidence_en": "sample-efficient RL for instruction following",
+      "evidence_cn": "面向指令遵循的样本高效强化学习",
+      "canonical_evidence": "面向指令遵循的样本高效强化学习",
+      "tldr_en": "Proposes HiR, a hindsight instruction replay framework that reuses failed attempts as successes for sample-efficient RL in instruction following.",
+      "tldr_cn": "该文针对指令遵循任务中成功样本稀疏导致强化学习样本效率低的问题，提出后见指令重放（HiR）框架。通过选择-重写策略将失败的尝试重放为成功样本，有效缓解奖励稀疏性。实验结果表明HiR显著提升了样本效率和任务完成率。",
+      "title_zh": "将失败重放为成功：面向指令遵循的样本高效强化学习",
+      "motivation_cn": "指令遵循任务中初始模型难以生成满足所有约束的响应，导致奖励稀疏、学习困难。",
+      "method_cn": "提出后见指令重放，选择已满足约束的失败响应并重写以模拟成功。",
+      "result_cn": "在多个指令遵循基准上，HiR的样本效率和成功率均显著优于基线方法。",
+      "conclusion_cn": "重放失败为成功是处理稀疏奖励指令遵循任务的有效样本高效策略。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-edpv55htq6",
+      "score": 7.0,
+      "evidence_en": "model-based reinforcement learning to improve sample efficiency via prioritized experience replay",
+      "evidence_cn": "通过优先模型经验回放提升模型基强化学习的样本效率",
+      "canonical_evidence": "通过优先模型经验回放提升模型基强化学习的样本效率",
+      "tldr_en": "Introduces Prioritized Model Experience Replay to stabilize MBRL by addressing dynamics model learning mismatch, improving sample efficiency.",
+      "tldr_cn": "模型基强化学习（MBRL）因动态模型学习不匹配（历史数据与当前策略下的查询分布不一致）导致训练不稳定。本文提出优先模型经验回放（PMER），通过分析性能差距分解，识别对策略优化更重要的过渡并给予更高回放权重。实验表明，PMER在多个连续控制任务上稳定了训练，显著提升了样本效率，为MBRL的实际应用提供了可靠改进。",
+      "title_zh": "优先模型经验回放",
+      "motivation_cn": "MBRL中动态模型学习存在分布不匹配，全局误差降低但局部策略相关误差仍大，导致振荡更新。",
+      "method_cn": "从理论分解性能差距，设计基于策略相关性的优先回放权重，优先回放对当前策略优化更重要的模型样本。",
+      "result_cn": "在MuJoCo等连续控制任务上，PMER训练更稳定，样本效率优于基线MBRL方法。",
+      "conclusion_cn": "优先回放模型经验有效缓解了模型学习不匹配问题，是提升MBRL样本效率的关键技术。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-88h3v90wzo",
+      "score": 7.0,
+      "evidence_en": "proposes MeanFlow models to improve training and inference efficiency over diffusion-based RL approaches",
+      "evidence_cn": "提出MeanFlow模型以提高扩散RL的训练和推理效率",
+      "canonical_evidence": "提出MeanFlow模型以提高扩散RL的训练和推理效率",
+      "tldr_en": "Replaces iterative diffusion policies with few-step MeanFlow models, improving efficiency in online RL under maximum entropy framework via soft policy iteration.",
+      "tldr_cn": "该论文针对扩散策略的迭代生成过程带来的高开销，提出使用MeanFlow模型（一种少量步的流基生成模型）来表示策略，从而提高扩散RL的训练和推理效率。在最大熵RL框架下通过软策略迭代优化，并解决了动作似然评估和软策略改进的挑战。实验表明在MuJoCo、DeepMind Control Suite和HumanoidBench上性能与扩散方法相当但效率更高。",
+      "title_zh": "平均流策略优化",
+      "motivation_cn": "扩散策略的迭代生成过程导致训练和推理开销大，限制了其在在线RL中的应用。",
+      "method_cn": "使用MeanFlow模型作为策略表示，在最大熵框架下通过软策略迭代优化，并处理了动作似然评估等关键问题。",
+      "result_cn": "在多个连续控制基准上，MeanFlow策略优化方法在效率显著提升的同时保持了与扩散方法相当的性能。",
+      "conclusion_cn": "流基模型可以高效替代扩散策略，为在线RL提供更实用的选择。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-igtmjtehxq",
+      "score": 7.0,
+      "evidence_en": "unifies controllable diffusion generation under a control-theoretic view, deriving RL methods for diffusion fine-tuning",
+      "evidence_cn": "从控制论角度统一可控扩散生成，推导出用于扩散微调的RL方法",
+      "canonical_evidence": "从控制论角度统一可控扩散生成，推导出用于扩散微调的RL方法",
+      "tldr_en": "DiffCon casts reverse diffusion sampling as state-only stochastic control in LS-MDPs, deriving f-divergence-regularized policy-gradient RL methods for diffusion model fine-tuning.",
+      "tldr_cn": "该论文提出扩散控制器（DiffCon），将反向扩散采样视为（广义）线性可解MDP中的仅状态随机控制，通过重加权预训练反向转移核实现对终端目标与f-散度成本的平衡。从最优条件推导出实用的RL微调方法，包括基于f-散度的策略梯度更新和PPO风格规则。理论分析和实验验证了该框架的有效性。",
+      "title_zh": "扩散控制器：框架、算法与参数化",
+      "motivation_cn": "可控扩散生成的各种启发式方法缺乏统一理解，需要系统化的框架。",
+      "method_cn": "将扩散采样建模为LS-MDP控制问题，推导出使用f-散度正则化策略梯度的RL方法。",
+      "result_cn": "在图像生成等任务上，扩散控制器派生的RL方法改善了可控性，与现有启发式方法相比性能更优。",
+      "conclusion_cn": "控制论视角为扩散模型的RL微调提供了统一且理论驱动的框架。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-l6vw6cvkhi",
+      "score": 6.0,
+      "evidence_en": "world models for sample-efficient model-based RL",
+      "evidence_cn": "世界模型用于基于模型的样本高效强化学习",
+      "canonical_evidence": "世界模型用于基于模型的样本高效强化学习",
+      "tldr_en": "TaskLoom proposes a knowledge-sharing world model architecture for online MBRL, improving sample efficiency by grouping tasks based on gradient similarity.",
+      "tldr_cn": "现有世界模型方法未能充分利用在线交互中任务间的潜在关系。TaskLoom提出分组两阶段训练范式，根据世界模型梯度相似性划分任务组，实现细粒度知识共享，显著提升了在线模型基强化学习的样本效率。",
+      "title_zh": "TaskLoom：在世界模型中跨任务编织知识",
+      "motivation_cn": "现有世界模型方法未能利用在线任务间的关系，样本效率受限。",
+      "method_cn": "提出TaskLoom架构，基于梯度相似性进行任务分组和知识共享。",
+      "result_cn": "在多个在线RL任务上提升了样本效率和最终性能。",
+      "conclusion_cn": "TaskLoom为多任务在线模型基RL提供了一种有效的知识共享方案。",
+      "matched_requirement_id": "req-composite-rl",
+      "matched_query_tag": "query:rl:composite",
+      "matched_query_text": "Papers central to 强化学习, especially work that connects or combines: reinforcement learning general concept; Q-learning algorithm; model-based RL approaches; reinforcement learning algorithm survey; reinforcement learning applications in robotics."
+    },
+    {
+      "paper_id": "openreview-icml-2026-8atkbixm7u",
+      "score": 6.0,
+      "evidence_en": "scalable and sample-efficient multi-agent environment co-design using diffusion models",
+      "evidence_cn": "使用扩散模型实现可扩展且样本高效的多智能体环境协同设计",
+      "canonical_evidence": "使用扩散模型实现可扩展且样本高效的多智能体环境协同设计",
+      "tldr_en": "Proposes DiffCoDe, a sample-efficient diffusion-based framework for multi-agent environment co-design.",
+      "tldr_cn": "多智能体环境协同设计面临高维空间和样本效率差的问题。本文提出DiffCoDe，利用扩散模型生成满足约束且奖励最大化的环境配置。其核心是投影通用引导（PUG）和基于Q学习的关键评估器，有效探索设计空间。在多个基准任务上，DiffCoDe显著优于现有方法，以更少的样本发现更优环境配置，展示了扩散模型在协同设计中的潜力。",
+      "title_zh": "基于扩散模型的可扩展多智能体环境协同设计",
+      "motivation_cn": "现有协同设计方法在高维环境设计空间中坍缩，且移动目标导致样本效率低下。",
+      "method_cn": "提出DiffCoDe框架，使用扩散模型生成环境配置，配合投影通用引导和Q学习关键评估器。",
+      "result_cn": "在物流和风电场等任务上，DiffCoDe以更少样本找到更优配置，性能大幅领先。",
+      "conclusion_cn": "DiffCoDe将扩散模型成功应用于环境协同设计，实现了样本效率与可扩展性的统一。",
+      "matched_requirement_id": "req-composite-diffusion-rl",
+      "matched_query_tag": "query:diffusion-rl:composite",
+      "matched_query_text": "Papers central to 样本高效的基于扩散的强化学习, especially work that connects or combines: sample efficient reinforcement learning; diffusion reinforcement learning; diffusion policy reinforcement learning; reinforcement learning diffusion; How to improve sample efficiency in diffusion based reinforcement learning?; Applications of diffusion models for sample efficient reinforcement learning."
+    },
+    {
+      "paper_id": "openreview-icml-2026-we5wzlukf5",
+      "score": 6.0,
+      "evidence_en": "uses bidirectional trajectory diffusion for data augmentation in offline RL to improve generalization and sample efficiency",
+      "evidence_cn": "利用双向轨迹扩散进行离线RL数据增强，提升泛化和样本效率",
+      "canonical_evidence": "利用双向轨迹扩散进行离线RL数据增强，提升泛化和样本效率",
+      "tldr_en": "BiTrajDiff proposes bidirectional trajectory generation with diffusion models to augment offline RL data, explicitly recovering connections between distinct behavior patterns for improved generalization.",
+      "tldr_cn": "该论文针对离线RL中数据增强方法局限于单轨迹、难以恢复不同行为模式间连接的问题，提出双向轨迹扩散（BiTrajDiff）框架，通过扩散模型双向生成轨迹，有效连接不同行为模式。实验表明在离线RL基准上相比现有数据增强方法，BiTrajDiff提升了策略的泛化性能和样本效率。",
+      "title_zh": "BiTrajDiff：用于离线强化学习的双向轨迹生成扩散模型",
+      "motivation_cn": "离线RL的数据增强方法通常只生成局部变体，未能恢复不同行为模式间的连接，限制了泛化。",
+      "method_cn": "提出双向轨迹扩散框架，利用扩散模型从两个方向生成轨迹，显式连接不同行为模式。",
+      "result_cn": "在D4RL等基准上，BiTrajDiff相比单一轨迹增强方法显著提升了策略性能和泛化能力。",
+      "conclusion_cn": "双向轨迹生成能够有效挖掘离线数据集中的潜在连接，是提升离线RL样本效率的有效手段。",
+      "matched_requirement_id": "req-6",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "Applications of diffusion models for sample efficient reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-wjcftjriqv",
+      "score": 6.0,
+      "evidence_en": "first framework to integrate uniform discrete diffusion with RL via GRPO",
+      "evidence_cn": "首个将均匀离散扩散与RL通过GRPO集成的框架",
+      "canonical_evidence": "首个将均匀离散扩散与RL通过GRPO集成的框架",
+      "tldr_en": "UDM-GRPO adapts GRPO to uniform discrete diffusion models by treating final clean sample as action and reconstructing trajectories via forward process, achieving stable training.",
+      "tldr_cn": "该论文针对将GRPO应用于均匀离散扩散模型（UDM）时的训练不稳定问题，提出UDM-GRPO框架。关键思想是将最终干净样本视为动作以获得稳定信号，并通过扩散前向过程重建轨迹以对齐预训练分布。引入的减少策略进一步提升了稳定性。实验表明UDM-GRPO在离散生成任务上优于直接应用GRPO。",
+      "title_zh": "UDM-GRPO：针对均匀离散扩散模型的稳定高效组相对策略优化",
+      "motivation_cn": "将RL与均匀离散扩散模型结合的方法缺失，直接应用GRPO导致训练不稳定。",
+      "method_cn": "将最终干净样本作为动作，通过扩散前向过程重建轨迹，并引入减少策略来稳定GRPO训练。",
+      "result_cn": "在离散生成基准上，UDM-GRPO相比基线实现了更稳定的训练和更好的生成性能。",
+      "conclusion_cn": "该工作为离散扩散模型的RL优化提供了首个有效框架。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    },
+    {
+      "paper_id": "openreview-icml-2026-v3dcfhec5c",
+      "score": 6.0,
+      "evidence_en": "uses optimal value function as return for short trajectory segments to align diffusion models via RL",
+      "evidence_cn": "利用最优价值函数作为短轨迹段的回报来对齐扩散模型",
+      "canonical_evidence": "利用最优价值函数作为短轨迹段的回报来对齐扩散模型",
+      "tldr_en": "Proposes VRPO, a two-stage framework that learns value-distribution for segment returns and refines score function, proving equivalence to training diffusion on tilted distribution.",
+      "tldr_cn": "该论文针对现有偏好优化方法将轨迹似然等同于最终状态概率的简化问题，提出价值即回报（VRPO）框架。第一阶段学习价值分布函数估计段级回报，第二阶段使用VRPO优化评分函数。理论上证明了在足够容量下等价于在倾斜分布上训练扩散过程。实验表明VRPO在图像和文本生成的对齐任务上优于DPO变体。",
+      "title_zh": "价值即回报：对齐最优评分函数的两阶段框架",
+      "motivation_cn": "现有DPO变体忽视了轨迹似然与最终状态概率的差异，导致对齐次优。",
+      "method_cn": "两阶段框架：先学习段级价值分布，再基于VRPO优化扩散过程的评分函数。",
+      "result_cn": "在多个对齐基准上，VRPO优于直接DPO方法，尤其在分布外场景下。",
+      "conclusion_cn": "价值函数作为回报能更准确地引导扩散模型对齐，优于似然简化方法。",
+      "matched_requirement_id": "req-4",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "reinforcement learning diffusion"
+    },
+    {
+      "paper_id": "openreview-icml-2026-agn2cgtciw",
+      "score": 5.0,
+      "evidence_en": "sample-efficient replicable RL theory",
+      "evidence_cn": "样本高效的可重复强化学习理论",
+      "canonical_evidence": "样本高效的可重复强化学习理论",
+      "tldr_en": "This paper studies replicable RL algorithms, providing improved sample complexity bounds for sample-efficient replicable RL in episodic settings.",
+      "tldr_cn": "强化学习的可重复性问题长期存在，现有理论在探索场景下样本复杂度界限过高。本文针对情境式强化学习，提出了新的可重复算法并给出了更紧的样本复杂度上界，缩小了与批处理设置的差距，推动了可重复强化学习理论的发展。",
+      "title_zh": "从生成到情境：样本高效的可重复强化学习",
+      "motivation_cn": "强化学习中的可重复性研究存在样本复杂度高的问题。",
+      "method_cn": "提出新的可重复强化学习算法，利用探索策略生成数据再转换为情境式学习。",
+      "result_cn": "获得了比现有方法更紧的样本复杂度上界。",
+      "conclusion_cn": "该工作从理论上提升了可重复强化学习的样本效率。",
+      "matched_requirement_id": "req-composite-rl",
+      "matched_query_tag": "query:rl:composite",
+      "matched_query_text": "Papers central to 强化学习, especially work that connects or combines: reinforcement learning general concept; Q-learning algorithm; model-based RL approaches; reinforcement learning algorithm survey; reinforcement learning applications in robotics."
+    },
+    {
+      "paper_id": "openreview-icml-2026-s3pssbv7fz",
+      "score": 5.0,
+      "evidence_en": "improves RL training for flow matching generation by proposing coefficients-preserving sampling to avoid noise artifacts",
+      "evidence_cn": "提出系数保持采样以避免噪声伪影，改进流匹配生成的RL训练",
+      "canonical_evidence": "提出系数保持采样以避免噪声伪影，改进流匹配生成的RL训练",
+      "tldr_en": "Identifies noise artifacts from SDE-based sampling in RL for flow matching, proposes coefficients-preserving sampling for cleaner rewards and better training stability.",
+      "tldr_cn": "该论文发现将在线RL应用于流匹配时，SDE采样引入的噪声伪影对奖励学习有害。理论分析表明噪声源于过度随机性，提出系数保持采样方法，在保留必要随机性的同时减少伪影。实验证明该方法提高了图像视频生成的质量和奖励学习稳定性。",
+      "title_zh": "用于流匹配强化学习的系数保持采样",
+      "motivation_cn": "SDE采样在流匹配RL中引入噪声伪影，阻碍奖励学习。",
+      "method_cn": "设计系数保持采样，在流匹配的确定性框架中引入适当随机性而不产生伪影。",
+      "result_cn": "在图像和视频生成任务上，系数保持采样提升了RL微调后的输出质量和训练稳定性。",
+      "conclusion_cn": "适当的随机性注入是流匹配RL成功的关键，系数保持策略实现了高效训练。",
+      "matched_requirement_id": "req-4",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "reinforcement learning diffusion"
+    },
+    {
+      "paper_id": "openreview-icml-2026-yvgtyofyud",
+      "score": 4.0,
+      "evidence_en": "addresses instability in GRPO training for diffusion LLMs",
+      "evidence_cn": "解决扩散LLM中GRPO训练的不稳定问题",
+      "canonical_evidence": "解决扩散LLM中GRPO训练的不稳定问题",
+      "tldr_en": "Identifies a self-reinforcing instability loop in GRPO for diffusion LLMs and proposes StableDRL to mitigate noise in importance ratios.",
+      "tldr_cn": "该论文发现扩散大语言模型（dLLM）在GRPO训练中因重要性比率近似噪声导致严重不稳定性，形成自增强的不稳定循环。理论分析和实验证实了该问题，并提出了StableDRL方法，通过降噪技术稳定训练。实验表明StableDRL在多个推理任务上提升了dLLM的微调稳定性和性能。",
+      "title_zh": "针对扩散语言模型的强化学习稳定性提升",
+      "motivation_cn": "扩散LLM在GRPO训练中表现出严重不稳定性，限制了RL对推理能力的提升。",
+      "method_cn": "通过理论分析识别出不稳定性循环，提出StableDRL以降低重要性比率估计噪声。",
+      "result_cn": "在推理基准上，StableDRL稳定了训练过程并提升了微调后的模型性能。",
+      "conclusion_cn": "为扩散语言模型的RL训练稳定性提供了理论和实践解决途径。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:diffusion-rl",
+      "matched_query_text": "diffusion reinforcement learning"
+    }
+  ],
+  "llm_ranked_at": "2026-07-11T06:38:24.820310+00:00",
+  "display_min_score": 4.0,
+  "pruned_at": "2026-07-11T06:38:24.852550+00:00"
+}
